@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Search the site</title>
+  <meta name="description" content="This is an example book built with Jupyter Books.">
+
+  <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/search">
+  <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://0.0.0.0:4000/jupyter-book/feed.xml">
+
+  <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/search" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Search the site" />
+<meta property="og:description" content="This is an example book built with Jupyter Books." />
+<meta property="og:image"       content="" />
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":
+    "http://0.0.0.0:4000/jupyter-book/search",
+  "headline":
+    "Search the site",
+  "datePublished":
+    "2019-06-26T13:24:22-05:00",
+  "dateModified":
+    "2019-06-26T13:24:22-05:00",
+  "description":
+    "This is an example book built with Jupyter Books.",
+  "author": {
+    "@type": "Person",
+    "name": "The Jupyter Book Community"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:4000/jupyter-book",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://0.0.0.0:4000/jupyter-book",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/jupyter-book/assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/jupyter-book/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    CommonHTML: {
+        linebreaks: {
+            automatic: true,
+        },
+    },
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML' async></script>
+
+  <!-- DOM updating function -->
+  <script>
+const runWhenDOMLoaded = cb => {
+  if (document.readyState != 'loading') {
+    cb()
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', cb)
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState == 'complete') cb()
+    })
+  }
+}
+
+// Helper function to init things quickly
+initFunction = function(myfunc) {
+  runWhenDOMLoaded(myfunc);
+  document.addEventListener('turbolinks:load', myfunc);
+};
+</script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '/jupyter-book';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="/jupyter-book/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script>
+
+initFunction(function () {
+    anchors.add("main h1, main h2, main h3, main h4")
+});
+
+</script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="/jupyter-book/assets/js/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/jupyter-book/assets/images/edit-button.svg" alt="Start interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlighter-rouge:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@0.4.0/lib/index.js"></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC -->
+  <script src="/jupyter-book/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script>
+var initToc = function () {
+  tocbot.init({
+    tocSelector: 'nav.onthispage',
+    contentSelector: '.c-textbook__content',
+    headingSelector: 'h2, h3',
+    orderedList: false,
+    collapseDepth: 6,
+    listClass: 'toc__menu',
+    activeListItemClass: "",  // Not using
+    activeLinkClass: "", // Not using
+  });
+  tocbot.refresh();
+}
+initFunction(initToc);
+</script>
+
+  <!-- Google analytics -->
+  <script src="/jupyter-book/assets/js/ga.js" async></script>
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
+
+  <!-- Load JS that depends on site variables -->
+  <script>
+/**
+ * Set up copy/paste for code blocks
+ */
+const codeCellId = index => `codecell${index}`
+
+const clipboardButton = id =>
+  `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="/jupyter-book/assets/images/copy-button.svg" alt="Copy to clipboard">
+  </a>`
+
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
+  }
+}
+
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('div.c-textbook__content > div.highlighter-rouge > div.highlight > pre, div.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("copy-button" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', clipboardButton(id));
+    }
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
+}
+
+initFunction(addCopyButtonToCodeCells);
+</script>
+
+
+  <!-- Hide cell code -->
+  <script>
+    /**
+    Add buttons to hide code cells
+    */
+
+
+    var setCodeCellVisibility = function (inputField, kind) {
+        // Update the image and class for hidden
+        var id = inputField.getAttribute('data-id');
+        var codeCell = document.querySelector(`#${id} div.highlight`);
+
+        if (kind === "visible") {
+            codeCell.classList.remove('hidden');
+            inputField.checked = true;
+        } else {
+            codeCell.classList.add('hidden');
+            inputField.checked = false;
+        }
+    }
+
+    var toggleCodeCellVisibility = function (event) {
+        // The label is clicked, and now we decide what to do based on the input field's clicked status
+        if (event.target.tagName === "LABEL") {
+            var inputField = event.target.previousElementSibling;
+        } else {
+            // It is the span inside the target
+            var inputField = event.target.parentElement.previousElementSibling;
+        }
+
+        if (inputField.checked === true) {
+            setCodeCellVisibility(inputField, "visible");
+        } else {
+            setCodeCellVisibility(inputField, "hidden");
+        }
+    }
+
+
+    // Button constructor
+    const hideCodeButton = id => `<input class="hidebtn" type="checkbox" id="hidebtn${id}" data-id="${id}"><label title="Toggle cell" for="hidebtn${id}" class="plusminus"><span class="pm_h"></span><span class="pm_v"></span></label>`
+
+    var addHideButton = function () {
+        // If a hide button is already added, don't add another
+        if (document.querySelector('div.hidecode input') !== null) {
+            return;
+        }
+
+        // Find the input cells and add a hide button
+        document.querySelectorAll('div.input_area').forEach(function (item, index) {
+            if (!item.classList.contains("hidecode")) {
+                // Skip the cell if it doesn't have a hidecode class
+                return;
+            }
+
+            const id = codeCellId(index)
+            item.setAttribute('id', id);
+            // Insert the button just inside the end of the next div
+            item.querySelector('div').insertAdjacentHTML('beforeend', hideCodeButton(id))
+
+            // Set up the visibility toggle
+            hideLink = document.querySelector(`#${id} div.highlight + input + label`);
+            hideLink.addEventListener('click', toggleCodeCellVisibility)
+        });
+    }
+
+
+    // Initialize the hide buttos
+    var initHiddenCells = function () {
+        // Add hide buttons to the cells
+        addHideButton();
+
+        // Toggle the code cells that should be hidden
+        document.querySelectorAll('div.hidecode input').forEach(function (item) {
+            setCodeCellVisibility(item, 'hidden');
+            item.checked = true;
+        })
+    }
+
+    initFunction(initHiddenCells);
+
+</script>
+
+  <!-- Load custom website scripts -->
+  <script src="/jupyter-book/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/jupyter-book/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/jupyter-book/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://0.0.0.0:4000") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="/jupyter-book/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://jupyter.org/jupyter-book/intro.html"><img src="/jupyter-book/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Jupyter Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/intro.html"
+        >
+          
+          Introduction
+        </a>
+
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__chapter"><a class="c-sidebar__entry" href="/jupyter-book/search.html">Search</a></li>
+        
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/01/using-jupyter-notebooks.html"
+        >
+          
+            1.
+          
+          Using Jupyter Notebooks
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/01/1/intro_jupyter_notebooks.html"
+                >
+                  
+                    1.1
+                  
+                  Introduction to Jupyter Notebooks
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/01/2/debugging_jupyter_notebooks.html"
+                >
+                  
+                    1.2
+                  
+                  Debugging Jupyter Notebooks
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+        <li class="c-sidebar__divider"></li>
+        
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/02/datatypes-and-variables.html"
+        >
+          
+            2.
+          
+          Datatypes and Variables
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/02/1/intro_python_and_notebooks_practice.html"
+                >
+                  
+                    2.1
+                  
+                  Introduction to python and Notebooks Practice
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/02/2/data_types_operations.html"
+                >
+                  
+                    2.2
+                  
+                  Data Types and Operations
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/02/3/casting.html"
+                >
+                  
+                    2.3
+                  
+                  Casting
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/03/debugging.html"
+        >
+          
+            3.
+          
+          Debugging
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/03/1/debugging_python_code.html"
+                >
+                  
+                    3.1
+                  
+                  Debugging Python Code
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/04/functions.html"
+        >
+          
+            4.
+          
+          Functions
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/1/input.html"
+                >
+                  
+                    4.1
+                  
+                  Input and Using Functions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/2/using_functions.html"
+                >
+                  
+                    4.2
+                  
+                  Using Functions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/3/builtin_functions.html"
+                >
+                  
+                    4.3
+                  
+                  Built-in Functions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/4/writing_functions.html"
+                >
+                  
+                    4.4
+                  
+                  Writing Functions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/5/writing_functions_parameters.html"
+                >
+                  
+                    4.5
+                  
+                  Writing Functions with Parameters
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/6/main.html"
+                >
+                  
+                    4.6
+                  
+                  Main
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/04/7/functions_returns.html"
+                >
+                  
+                    4.7
+                  
+                  Functions and Returns
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/05/conditionals.html"
+        >
+          
+            5.
+          
+          Conditionals
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/1/logical_expressions.html"
+                >
+                  
+                    5.1
+                  
+                  Logical Expressions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/2/if_statements.html"
+                >
+                  
+                    5.2
+                  
+                  if Statements
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/3/if_else.html"
+                >
+                  
+                    5.3
+                  
+                  if-else Statements
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/4/if_elif.html"
+                >
+                  
+                    5.4
+                  
+                  if-elif Statements
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/5/ifif_vs_ifelif.html"
+                >
+                  
+                    5.5
+                  
+                  if-then-if vs. if-elif Statements
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/05/6/not.html"
+                >
+                  
+                    5.6
+                  
+                  not
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/06/iteration-and-loops.html"
+        >
+          
+            6.
+          
+          Iteration and Loops
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/06/1/while_loops_basics.html"
+                >
+                  
+                    6.1
+                  
+                  While Loops
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/06/2/common_while_uses.html"
+                >
+                  
+                    6.2
+                  
+                  Common While Loops Patters
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/07/lists.html"
+        >
+          
+            7.
+          
+          Lists
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/1/lists_basics.html"
+                >
+                  
+                    7.1
+                  
+                  Lists Basics
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/2/strings_as_lists.html"
+                >
+                  
+                    7.2
+                  
+                  Strings as Lists
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/3/strings_lists_mutating.html"
+                >
+                  
+                    7.3
+                  
+                  Strings, Lists, and Mutating
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/4/slicing.html"
+                >
+                  
+                    7.4
+                  
+                  Slicing
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/5/lists_scope.html"
+                >
+                  
+                    7.5
+                  
+                  Lists and Scope
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/07/6/lists_builtin_functions.html"
+                >
+                  
+                    7.6
+                  
+                  Lists and Built-in Functions
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/08/for-loops.html"
+        >
+          
+            8.
+          
+          For Loops
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/08/1/for_loops_basics.html"
+                >
+                  
+                    8.1
+                  
+                  For Loops Basics
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/08/2/accumulator.html"
+                >
+                  
+                    8.2
+                  
+                  For Loops and the Accumulator Pattern
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/08/3/nested_forloops.html"
+                >
+                  
+                    8.3
+                  
+                  Nested For Loops
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/09/modules.html"
+        >
+          
+            9.
+          
+          Modules
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/09/1/using_modules.html"
+                >
+                  
+                    9.1
+                  
+                  Using Modules
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/09/2/measuring_runtime.html"
+                >
+                  
+                    9.2
+                  
+                  Example: Measuring Runtime
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/10/file-io.html"
+        >
+          
+            10.
+          
+          File input/output
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/10/1/fileio.html"
+                >
+                  
+                    10.1
+                  
+                  File input/output basics
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/11/matplotlib.html"
+        >
+          
+            11.
+          
+          matplotlib and Graphing
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/11/1/matplotlib.html"
+                >
+                  
+                    11.1
+                  
+                  Introduction to matplotlib
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+      
+      
+
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter">
+        <a class="c-sidebar__entry "
+          href="/jupyter-book/12/objects.html"
+        >
+          
+            12.
+          
+          Objects
+        </a>
+
+        
+
+          
+          
+          
+          
+
+          
+
+          <ul class="c-sidebar__sections u-hidden-visually">
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/12/1/using_objects_part1.html"
+                >
+                  
+                    12.1
+                  
+                  Using Objects (part 1)
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+          </ul>
+        
+      </li>
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a></p>
+</nav>
+
+      
+      <main class="c-textbook__page" tabindex="-1">
+          <div class="o-wrapper">
+            <div class="c-sidebar-toggle">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <button
+    id="js-sidebar-toggle"
+    class="hamburger hamburger--arrowalt is-active"
+  >
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span class="c-sidebar-toggle__label">Toggle Sidebar</span>
+  </button>
+</div>
+
+            
+
+            <div class="c-textbook__content">
+              <div class="search-content__inner-wrap">
+    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
+    <div id="results" class="results"></div>
+</div>
+
+<script>
+    // Add the lunr store since we will now search it
+    var store = [{
+        "title": "Introduction to Jupyter Notebooks",
+        
+        "excerpt":
+            "Welcome to the CSCI 1200 interactive notes and workbook! This set of notes is meant to supplement the lectures and lab materials. These notes are a great place to review concepts that we’ve been over in class and to play around with code. If you ever worry that you have deleted a part of one of these notebooks, or messed it up in some way, remember that you can always re-download them from the course website! For the links between notebooks to work in these notes, you need to preserve the structure that we provide (all week 1 notes in...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/01/1/intro_jupyter_notebooks.html",
+        "teaser":null},{
+        "title": "Debugging Jupyter Notebooks",
+        
+        "excerpt":
+            "Debugging Jupyter Notebooks You might find that the code in one of your notebooks isn’t quite running like you would expect it to. For python-specific errors and debugging, see chapter 3. In this notebook we’re going to explore some of the weird things that can happen because we are using Jupyter Notebooks. We’re going to pay special attention to the cells and the order in which we run them. Remember from what we’ve learned about python that we must always declare a variable before we can use it. # Doesn't work! my_undeclared_variable hasn't been declared print(my_undeclared_variable) # Does work! my_undeclared_variable...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/01/2/debugging_jupyter_notebooks.html",
+        "teaser":null},{
+        "title": "Using Jupyter Notebooks",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/01/using-jupyter-notebooks.html",
+        "teaser":null},{
+        "title": "Introduction to python and Notebooks Practice",
+        
+        "excerpt":
+            "Introduction to Python Python is the programming language that we are using in this course. We’re using version 3, so if you have experience with Python 2.7, you will see a few things that are different. Python programs are composed of a series of statements that are executed in order, from top to bottom. In this set of notes, we’ll go over comments, the print function, and variable declarations. Comments In the examples that we’ve shown you so far, there are certain lines in our blocks of code that begin with a # character. These lines are called comments. Comments...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/1/intro_python_and_notebooks_practice.html",
+        "teaser":null},{
+        "title": "John Snow and the Broad Street Pump",
+        
+        "excerpt":
+            "Observation and Visualization: John Snow and the Broad Street Pump One of the earliest examples of astute observation eventually leading to the establishment of causality dates back more than 150 years. To get your mind into the right timeframe, try to imagine London in the 1850’s. It was the world’s wealthiest city but many of its people were desperately poor. Charles Dickens, then at the height of his fame, was writing about their plight. Disease was rife in the poorer parts of the city, and cholera was among the most feared. It was not yet known that germs cause disease;...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.html",
+        "teaser":null},{
+        "title": "Data Types and Operations",
+        
+        "excerpt":
+            "Data Types In previous installments of these notes, we’ve alluded to something called “data types”. All values in python have a type. Intuitively, the number 7 and the piece of text “saber-toothed tiger” are not the same type of value. There are 4 basic (or primitive) types in python: type short name example values integer int -10, -7, -4, 0, 2, 13, 1117, 98372 float float -5.3, -4.0, -0.756, 0.0, 1.25, 12386.2 string str “hello”, “csci1200”, “sentences are strings”, “3.0”, “remember to start your homework early!” boolean bool True, False There are some more types, but we can do a...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/2/data_types_operations.html",
+        "teaser":null},{
+        "title": "Snow’s “Grand Experiment”",
+        
+        "excerpt":
+            "Snow’s “Grand Experiment” Encouraged by what he had learned in Soho, Snow completed a more thorough analysis of cholera deaths. For some time, he had been gathering data on cholera deaths in an area of London that was served by two water companies. The Lambeth water company drew its water upriver from where sewage was discharged into the River Thames. Its water was relatively clean. But the Southwark and Vauxhall (S&amp;V) company drew its water below the sewage discharge, and thus its supply was contaminated. The map below shows the areas served by the two companies. Snow honed in on...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/2/snow-s-grand-experiment.html",
+        "teaser":null},{
+        "title": "Casting",
+        
+        "excerpt":
+            "Type Conversions (Casting) In the previous installement of these notes, we learned about different types and doing operations on them, such as adding ints together (17 + 32). Some of these operations result in a value of the same type (17 + 32 is 49, which is also an int), while some operations change the type. For instance, 17 + 32.0 changes the result into 49.0, which is a float. There are two general ways to convert values from one type to another: With math. With casting functions. Before we get into the details of these, let’s take a look...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/3/casting.html",
+        "teaser":null},{
+        "title": "Establishing Causality",
+        
+        "excerpt":
+            "Establishing Causality In the language developed earlier in the section, you can think of the people in the S&amp;V houses as the treatment group, and those in the Lambeth houses at the control group. A crucial element in Snow’s analysis was that the people in the two groups were comparable to each other, apart from the treatment. In order to establish whether it was the water supply that was causing cholera, Snow had to compare two groups that were similar to each other in all but one aspect–their water supply. Only then would he be able to ascribe the differences...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/3/establishing-causality.html",
+        "teaser":null},{
+        "title": "Randomization",
+        
+        "excerpt":
+            "Randomization An excellent way to avoid confounding is to assign individuals to the treatment and control groups at random, and then administer the treatment to those who were assigned to the treatment group. Randomization keeps the two groups similar apart from the treatment. If you are able to randomize individuals into the treatment and control groups, you are running a randomized controlled experiment, also known as a randomized controlled trial (RCT). Sometimes, people’s responses in an experiment are influenced by their knowing which group they are in. So you might want to run a blind experiment in which individuals do...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/4/randomization.html",
+        "teaser":null},{
+        "title": "Endnote",
+        
+        "excerpt":
+            "Endnote In the terminology of that we have developed, John Snow conducted an observational study, not a randomized experiment. But he called his study a “grand experiment” because, as he wrote, “No fewer than three hundred thousand people … were divided into two groups without their choice, and in most cases, without their knowledge …” Studies such as Snow’s are sometimes called “natural experiments.” However, true randomization does not simply mean that the treatment and control groups are selected “without their choice.” The method of randomization can be as simple as tossing a coin. It may also be quite a...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/5/endnote.html",
+        "teaser":null},{
+        "title": "Causality and Experiments",
+        
+        "excerpt":
+            "Causality and Experiments “These problems are, and will probably ever remain, among the inscrutable secrets of nature. They belong to a class of questions radically inaccessible to the human intelligence.” —The Times of London, September 1849, on how cholera is contracted and spread Does the death penalty have a deterrent effect? Is chocolate good for you? What causes breast cancer? All of these questions attempt to assign a cause to an effect. A careful examination of data can help shed light on questions like these. In this section you will learn some of the fundamental concepts involved in establishing causality....",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/causality-and-experiments.html",
+        "teaser":null},{
+        "title": "Datatypes and Variables",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/02/datatypes-and-variables.html",
+        "teaser":null},{
+        "title": "Expressions",
+        
+        "excerpt":
+            "3.1 Expressions Programming languages are much simpler than human languages. Nonetheless, there are some rules of grammar to learn in any language, and that is where we will begin. In this text, we will use the Python programming language. Learning the grammar rules is essential, and the same rules used in the most basic programs are also central to more sophisticated programs. Programs are made up of expressions, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a * symbol between two numerical expressions. Expressions, such as 3 * 4, are...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/1/Expressions.html",
+        "teaser":null},{
+        "title": "Debugging Python Code",
+        
+        "excerpt":
+            "Debugging our code: reading error messages # TODO: run this cell! print(y) When you get an error message, you’ll see something similar to what is below: --------------------------------------------------------------------------- NameError Traceback (most recent call last) &lt;ipython-input-1-d9183e048de3&gt; in &lt;module&gt;() ----&gt; 1 print(y) NameError: name 'y' is not defined There are a couple important parts of this error message that help tell you what caused your code to crash. The type of error. In this case, a NameError has occurred. This appears at the top and bottom of this message. (NameError: name 'y' is not defined) Extra information. Look at NameError: name 'y' is...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/1/debugging_python_code.html",
+        "teaser":null},{
+        "title": "Names",
+        
+        "excerpt":
+            "3.2 Names Names are given to values in Python using an assignment statement. In an assignment, a name is followed by =, which is followed by any expression. The value of the expression to the right of = is assigned to the name. Once a name has a value assigned to it, the value will be substituted for that name in future expressions. a = 10 b = 20 a + b 30 A previously assigned name can be used in the expression to the right of =. quarter = 1/4 half = 2 * quarter half 0.5 However, only...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/2/Names.html",
+        "teaser":null},{
+        "title": "Call Expressions",
+        
+        "excerpt":
+            "Call expressions invoke functions, which are named operations. The name of the function appears first, followed by expressions in parentheses. abs(-12) 12 round(5 - 1.3) 4 max(2, 2 + 3, 4) 5 In this last example, the max function is called on three arguments: 2, 5, and 4. The value of each expression within parentheses is passed to the function, and the function returns the final value of the full call expression. The max function can take any number of arguments and returns the maximum. A few functions are available by default, such as abs and round, but most functions...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/3/Calls.html",
+        "teaser":null},{
+        "title": "Introduction to Tables",
+        
+        "excerpt":
+            "We can now apply Python to analyze data. We will work with data stored in Table structures. Tables are a fundamental way of representing data sets. A table can be viewed in two ways: a sequence of named columns that each describe a single attribute of all entries in a data set, or a sequence of rows that each contain all information about a single individual in a data set. We will study tables in great detail in the next several chapters. For now, we will just introduce a few methods without going into technical details. The table cones has...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/4/Introduction_to_Tables.html",
+        "teaser":null},{
+        "title": "Debugging",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/debugging.html",
+        "teaser":null},{
+        "title": "Programming in Python",
+        
+        "excerpt":
+            "Programming in Python   Programming can dramatically improve our ability to collect and analyze information about the world, which in turn can lead to discoveries through the kind of careful reasoning demonstrated in the previous section. In data science, the purpose of writing a program is to instruct a computer to carry out the steps of an analysis. Computers cannot study the world on their own. People must describe precisely what steps the computer should take in order to collect and analyze data, and those steps are expressed through programs.   ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/03/programming-in-python.html",
+        "teaser":null},{
+        "title": "Numbers",
+        
+        "excerpt":
+            "Computers are designed to perform numerical calculations, but there are some important details about working with numbers that every programmer working with quantitative data should know. Python (and most other programming languages) distinguishes between two different types of numbers: Integers are called int values in the Python language. They can only represent whole numbers (negative, zero, or positive) that don’t have a fractional component Real numbers are called float values (or floating point values) in the Python language. They can represent whole or fractional numbers but have some limitations. The type of a number is evident from the way it...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/1/Numbers.html",
+        "teaser":null},{
+        "title": "Input and Using Functions",
+        
+        "excerpt":
+            "The input Function The input() function is a very useful tool for making your programs interactive. Here is an example usage of this function: color = input(\"What is your favorite color? \") Let’s break down this function similarly to how we broke down the print function. The first 3 elements of the input function are the same as the print function: input this is the part of the function that says what we want to do. ( ... ) the parentheses are indicating that this function takes an argument (see part 3). \"What is your favorite color? \" this is...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/1/input.html",
+        "teaser":null},{
+        "title": "Strings",
+        
+        "excerpt":
+            "Much of the world’s data is text, and a piece of text represented in a computer is called a string. A string can represent a word, a sentence, or even the contents of every book in a library. Since text can include numbers (like this: 5) or truth values (True), a string can also describe those things. The meaning of an expression depends both upon its structure and the types of values that are being combined. So, for instance, adding two strings together produces another string. This expression is still an addition expression, but it is combining a different type...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/2/Strings.html",
+        "teaser":null},{
+        "title": "Using Functions",
+        
+        "excerpt":
+            "Using functions In previous installments of the course notes, we’ve seen the print and input functions. Functions make up the main building blocks of our programs—they are re-usable pieces of code that are nicely wrapped up for us. For instance, the implementation of the print function may have 50 lines of code, it may only have 2. We don’t know and we don’t care. To use it, we just have to write print(\"my fantastic message\"). We can give the general format for using functions as: return_value = function_name(parameters) Not all functions have all parts of this general format, but all...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/2/using_functions.html",
+        "teaser":null},{
+        "title": "Comparisons",
+        
+        "excerpt":
+            "Boolean values most often arise from comparison operators. Python includes a variety of operators that compare values. For example, 3 is larger than 1 + 1. 3 &gt; 1 + 1 True The value True indicates that the comparison is valid; Python has confirmed this simple fact about the relationship between 3 and 1+1. The full set of common comparison operators are listed below. Comparison Operator True example False Example Less than &lt; 2 &lt; 3 2 &lt; 2 Greater than &gt; 3&gt;2 3&gt;3 Less than or equal &lt;= 2 &lt;= 2 3 &lt;= 2 Greater or equal &gt;= 3...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/3/Comparison.html",
+        "teaser":null},{
+        "title": "Built-in Functions",
+        
+        "excerpt":
+            "Built-in Functions See course notes section 4.2 for information about how to use functions. This section is mostly a guide on what parameters and returns some (not all!) built in python functions take. “Regular” built-in functions (non-string) The python documentation for functions can be a bit confusing. Let’s walk through an example by looking at the len() function: len(s) Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set). This documentation talks about a...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/3/builtin_functions.html",
+        "teaser":null},{
+        "title": "Writing Functions",
+        
+        "excerpt":
+            "Writing Functions Let’s write and call our own functions. We’ll start with functions that do not have parameters and do not have return values. The basic format is: def function_name(): # code here # notice that it is indented # everything indented here is inside this function Python will give us an error if we try to define a function that is only comments and no code though, so let’s define a function with a print() statement in it. See section 4.5 for information on writing functions that include parameters. # TODO: run me! def dog(): print(\"labradoodle\") # After you've...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/4/writing_functions.html",
+        "teaser":null},{
+        "title": "Writing Functions with Parameters",
+        
+        "excerpt":
+            "Writing Functions with Parameters Let’s write and call our own functions now, with parameters! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function We can give the function as many parameters as we want to in a comma separated list. Before we go on, let’s refine “parameter” a little more. (Adding to our definition from section 4.2.) parameter: information passed to the function when it is called. All parameters are given a name in the function definition. The name is how we will refer to the...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/5/writing_functions_parameters.html",
+        "teaser":null},{
+        "title": "Main",
+        
+        "excerpt":
+            "The main function All programs have a special function called main, which is what is run when you run your program. Most programming languages have special ways to write down your function. What we do in python is the following: def main(): # code to run our program goes here # two underscode precede and succeed \"name\" and \"main\" this is # important that you type exactly like this if __name__ == \"__main__\": main() We’ll talk more about the more techincal reasons that we do this when we talk about modules, but for now, here is the reason that we...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/6/main.html",
+        "teaser":null},{
+        "title": "Functions and Returns",
+        
+        "excerpt":
+            "Writing Functions with Returns Let’s write and call our own functions now, with returns! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function return value Remember, in section 4.1 we introduced return values and in section 4.2 we talked about using functions with return values. Now, we’re going to write functions with return values. Similarly to how we can think of parameters as input to a function, we can think of a return value as output from a function. # TODO: run this cell def get_num():...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/7/functions_returns.html",
+        "teaser":null},{
+        "title": "Data Types",
+        
+        "excerpt":
+            "Every value has a type, and the built-in type function returns the type of the result of any expression.   One type we have encountered already is a built-in function. Python indicates that the type is a builtin_function_or_method; the distinction between a function and a method is not important at this stage.           type(abs)                          builtin_function_or_method                   This chapter will explore many useful types of data.   ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/Types.html",
+        "teaser":null},{
+        "title": "Functions",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/04/functions.html",
+        "teaser":null},{
+        "title": "Logical Expressions",
+        
+        "excerpt":
+            "Logical Expressions Long ago we promised you that we would talk about boolean values in greater depth. The theme of this week is making good on that promise. So far, we know that the boolean data type has two values, True and False. We also know that underneath it all, our computers are executing machine code to manipulate binary data (“bits”) that are 1s and 0s. The boolean data type maps directly to these 1s (True/”on”) and 0s (False/”off”). Take a look at what happens when we cast boolean values to ints. # TODO: run me! int(True) # TODO: run...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/1/logical_expressions.html",
+        "teaser":null},{
+        "title": "if Statements",
+        
+        "excerpt":
+            "if statements / conditionals / selection statements An if statement is a control structure that we use to create branches in our code. This means that our code can do one thing under certain circumstances and another thing under different circumstances. control structure: a part of the language that allows us to dictate when and how (and how many times) certain pieces of code are run. We can consider functions to be one type of control structure. (Though they are so important that they just get to be called functions most of the time). Let’s take a look at the...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/2/if_statements.html",
+        "teaser":null},{
+        "title": "if-else Statements",
+        
+        "excerpt":
+            "if/else statements if statements have multiple ways that we can customize them (other than changing the logical expression): the first of these ways is by adding an else clause to our statement. The syntax of if/else statements is: if logical_expression: # do something else: # do something different # TODO: run me! Under what circumstances is \"big number\" printed out? # What about \"small number\"? # Answer: number = int(input(\"number? \")) if number &gt; 100: print(\"big number\") else: print(\"small number\") print(\"done\") Notice that what makes this statement different than in the previous section is that either “big number” or “small...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/3/if_else.html",
+        "teaser":null},{
+        "title": "if-elif Statements",
+        
+        "excerpt":
+            "if/elif/else statements if statements have multiple ways that we can customize them (other than changing the logical expression): the second of these ways is by adding an elif clause to our statement. The syntax of if/elif/else statements is: if logical_expression: # do something elif logical_expression2: # do something different else: # do something different again Let’s take a look at our previous example code again. # TODO: run me! Under what circumstances is \"big number\" printed out? # What about \"small number\"? What about \"medium number\"? # Answer: number = int(input(\"number? \")) if number &gt; 100: print(\"big number\") elif number...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/4/if_elif.html",
+        "teaser":null},{
+        "title": "if-then-if vs. if-elif Statements",
+        
+        "excerpt":
+            "if then if vs. if/elif statements As we learned in the previous section, an if statement followed by an elif is part of 1 control structure. if logical_expression: # do something if logical_expression is True elif logical_expression2: # do something if logical_expression is False # and also logical_expression2 is True This might lead us to ask–what is the difference between an if/elif statement versus having two if statements in a row? Let’s take a look at some examples. # TODO: run me! What is the output? x = 100 y = 50 # ONE control statement if x &gt; 7:...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/5/ifif_vs_ifelif.html",
+        "teaser":null},{
+        "title": "not",
+        
+        "excerpt":
+            "not In section 7.1 we talked about the logical operators and and or. There is one that we left out–not. not acts a little bit differently than and and or. We can think of and and or as taking two boolean values and combining them into one. print(True and True) # True print(True and False) # False print(False and True) # False print(False and False) # False print(True or True) # True print(True or False) # True print(False or True) # True print(False or False) # False The not logical operator takes one boolean value and switches it to the...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/6/not.html",
+        "teaser":null},{
+        "title": "Conditionals",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/05/conditionals.html",
+        "teaser":null},{
+        "title": "While Loops",
+        
+        "excerpt":
+            "while Loops A while loop is a control structure (similar to how a conditional statement is a control structure) that we use to repeat certain pieces of code (and avoid all that copy-pasting). We use while loops to repeat a block of code either a predetermined number of times or an unknown number of times. Let’s take a look at the syntax of a while loop. while logical_expression: # do things print(1) # for example, print the number 1 print(\"done\") # this is outside the while loop There are a few important pieces here: logical_expression this will be how our...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/06/1/while_loops_basics.html",
+        "teaser":null},{
+        "title": "Common While Loops Patters",
+        
+        "excerpt":
+            "“Until x happens” and validating input Let’s take a closer look at two common uses of a while loop. Say that you’d like to continue doing a task until some event happens. For instance, you might want to continue buying stocks until you are out of money or you might want to prompt the user for a password until they enter the correct one. For both of these instances, we want to test for the opposite of our stop condition in the logical expression because the while loop will continue until that condition is false. So instead of saying “I...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/06/2/common_while_uses.html",
+        "teaser":null},{
+        "title": "Iteration and Loops",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/06/iteration-and-loops.html",
+        "teaser":null},{
+        "title": "Lists Basics",
+        
+        "excerpt":
+            "Introduction to Lists We’re going to start learning about lists this week. Lists can get pretty complex, but we’re going to start with the basics. list: an ordered collection of values. Lists are a container type that holds other values. element: a single item in a list. index: the location of any given element. Creating Lists The syntax of creating a list is as follows: [\"cat\", \"dog\", \"zebra\"] # a list of strings It starts and ends with square brackets and each element is separated with a comma. # TODO: run this cell. What is the type of a list?...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/1/lists_basics.html",
+        "teaser":null},{
+        "title": "Strings as Lists",
+        
+        "excerpt":
+            "Strings as lists   In many ways, strings act as a list of their composite characters. Let’s compare:           # TODO: run me word = \"hello\" word_as_list = [\"h\", \"e\", \"l\", \"l\", \"o\"]                     # TODO: same length? print(len(word)) print(len(word_as_list))                     # TODO: same indexing? print(word[0]) print(word_as_list[0]) print(word[2]) print(word_as_list[2]) print(word[4]) print(word_as_list[4])             That’s pretty much it for this section. When we learn about for loops, we’ll see how we can treat lists and strings as the same in that context as well.   ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/2/strings_as_lists.html",
+        "teaser":null},{
+        "title": "Strings, Lists, and Mutating",
+        
+        "excerpt":
+            "Mutation in strings and lists Say we have a string and want to change it to upper case. We’ve learned that we can use the str.upper() function to acheive this: s = \"Xena, Warrior Princess\" uppercase = s.upper() print(s) # still the mixed-case version print(uppercase) # upper case version But what do we do if we only want to change the first 4 letters to uppercase? For “XENA, Warrior Princess”? We might be tempted to write code like in the following cell: # TODO: run me! What happens? # Answer: s = \"Xena, Warrior Princess\" s[0] = s[0].upper() s[1] =...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/3/strings_lists_mutating.html",
+        "teaser":null},{
+        "title": "Slicing",
+        
+        "excerpt":
+            "String and list slicing We’ve already learned about string and list indexing. Now we’re going to look at slicing. Indexing isolated one element at a time. Slicing isolates 0 or more elements. The syntax is: variable[begin:end] where begin is inclusive and end is exclusive. Both begin and end are optional — if they are left out, this means “go from the beginning until … “ or “go from this index until the end”. Let’s play around with this! s = \"super turtle\" print(s[:4]) print(s[4:]) s = \"super turtle\" print(s[0:6]) s = \"super turtle\" print(s[0:len(s)]) s = \"super turtle\" print(s[7:len(s)]) This...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/4/slicing.html",
+        "teaser":null},{
+        "title": "Lists and Scope",
+        
+        "excerpt":
+            "Mutable types (e.g. lists) and Scope At the end of section 7.3, we mentioned that scope becomes even more complicated with lists. This is because lists, unlike the other types we’ve worked with, are mutable. type mutable? example values int no! -10, -7, -4, 0, 2, 13, 1117, 98372 float no! -5.3, -4.0, -0.756, 0.0, 1.25, 12386.2 string no! “hello”, “csci1200”, “sentences are strings”, “3.0”, “remember to start your homework early!” boolean no! True, False list yes! [1, 2], [“cat”, “dog”, “bird”], [False, True, False], [1, 0.2, “friend”, False] We say that types that are not mutable are pass-by-value. This...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/5/lists_scope.html",
+        "teaser":null},{
+        "title": "Lists and Built-in Functions",
+        
+        "excerpt":
+            "Built-in Functions for lists In section 4.3 we introduced python’s built-in functions. We talked about a couple general functions like input(), max(), and abs() as well as some string specific functions like str.islower(), str.capitalize(), and str.upper(). Now we are going to go over two types of built-in functions dealing with lists: built-in functions that take lists as parameters. list functions that are built-in. (Called similarly to string functions.) Built-in functions that take lists as parameters Some of the standard python built-in functions can take lists as parameters. Here is a list of some of the most useful ones for this...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/6/lists_builtin_functions.html",
+        "teaser":null},{
+        "title": "Lists",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/07/lists.html",
+        "teaser":null},{
+        "title": "For Loops Basics",
+        
+        "excerpt":
+            "for Loops A for loop is a control structure that we use to repeat certain pieces of code (and avoid all that copy-pasting). control structure: a part of the language that allows us to dictate when and how (and how many times) certain pieces of code are run. We can consider functions to be one type of control structure. (Though they are so important that they just get to be called functions most of the time). Let’s take a look at the syntax of a for loop. for variable_name in [options_list]: # do things print(variable_name) # for example, print each...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/08/1/for_loops_basics.html",
+        "teaser":null},{
+        "title": "For Loops and the Accumulator Pattern",
+        
+        "excerpt":
+            "The Accumulator Pattern When writing for loops there are certain patterns that you will see over and over and over again. The accumulator pattern is the most common. Say, for example, that we want to count the number of times that a for loop runs. # TODO: run this cell. What happens? # Answer: secret_number = 97 # pretend that you don't know the value of this number for num in range(secret_number): count = count + 1 # every time the loop runs, we will increment a variable print(count) # then print it out at the end Here, we get...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/08/2/accumulator.html",
+        "teaser":null},{
+        "title": "Nested For Loops",
+        
+        "excerpt":
+            "Nested for loops There are many cases when you want to have iteration happen within an iteration. In this case, we will “nest” our loops–put one loop inside of another loop. for outer_loop_value in range(10): print(\"Outer: \" + str(outer_loop_value)) for inner_loop_value in range(5): print(\"Inner: \" + str(inner_loop_value)) Notice that your inner for loop is entirely indented within the outer for loop. Each time the outer loop iterates in this example (total of 10 times), the inner loop will iterate 5 times. # TODO: run me. (this example is the same except the value in the range() # function for the...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/08/3/nested_forloops.html",
+        "teaser":null},{
+        "title": "For Loops",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/08/for-loops.html",
+        "teaser":null},{
+        "title": "Using Modules",
+        
+        "excerpt":
+            "Using Modules In python code, we may want to access functions that are not automatically included (unlike the built-in functions). There are a number of collections of functions that we can use by “importing their modules”. A module for us is a collection of python functions. There many, many python modules but there are only two modules that we will focus on for the time being: random and time. random will let us generate (pseudo) random numbers. (Generating a truly random number is extremely hard; most programming languages have default modules that generate seemingly random numbers.) time will let us...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/09/1/using_modules.html",
+        "teaser":null},{
+        "title": "Example: Measuring Runtime",
+        
+        "excerpt":
+            "Runtime Runtime is the amount of time that it take for a program or piece of code to run. It can either be measured in real time (minutes, seconds, milliseconds, etc) or in number of operations. Computer scientists study runtime most often in terms of number of operations, but it is much easier for us to see the effects of different runtimes directly if we measure using real time. To do our measurements we will use the time module (see section 9.1 for instructions on how to import modules). There are four important pieces to using the time module to...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/09/2/measuring_runtime.html",
+        "teaser":null},{
+        "title": "Modules",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/09/modules.html",
+        "teaser":null},{
+        "title": "File input/output basics",
+        
+        "excerpt":
+            "File input/output (i/o) It is frequently the case that we want to be able to interact with files programmatically. This is where file i/o comes in. input: The file being read/processed by the program. output: The file that the program produces. In python, we’ll use the open() function to interact with files: file_obj = open(filename, mode) # do things with the file_obj file_obj.close() # always close any files that you've opened! The parameters and return value are as follows: filename : a string indicating the location of the file mode : a string indicating what we want to do with...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/10/1/fileio.html",
+        "teaser":null},{
+        "title": "File input/output",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/10/file-io.html",
+        "teaser":null},{
+        "title": "Introduction to matplotlib",
+        
+        "excerpt":
+            "Under construction! notes for this section will be posted later in the course.   ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/11/1/matplotlib.html",
+        "teaser":null},{
+        "title": "matplotlib and Graphing",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/11/matplotlib.html",
+        "teaser":null},{
+        "title": "Using Objects (part 1)",
+        
+        "excerpt":
+            "Using Objects (part 1) Back when we talked about data types, we talked about them as if they were pretty similar in how they acted. When we learned about built-in functions, we learned that strings interact differently with functions than ints, floats, and booleans do. When we learned about lists, we learned that they interact similary with functions to strings. What has been going on here is that strings and lists are both what we call objects. Types like int, float, and boolean are what we call “primitive” (basically not an object). An object has state and behavior. For example,...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/12/1/using_objects_part1.html",
+        "teaser":null},{
+        "title": "Objects",
+        
+        "excerpt":
+            " ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/12/objects.html",
+        "teaser":null},{
+        "title": "Citations and bibliographies",
+        
+        "excerpt":
+            "Including citations in your book Because jupyter-book is built on top of Jekyll, we can use the excellent jekyll-scholar book to include citations and a bibliography with your book. Note that this only works if you’re building your book HTML locally and hosting the HTML files online somewhere. This can still use GitHub pages, but not the auto-generation of a cite from markdown files feature of GitHub pages. This is because GitHub pages doesn’t include the jekyll-scholar plugin. How to use citations Including citations with your markdown files or notebooks is done in the following way. Modify the file in...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/citations.html",
+        "teaser":null},{
+        "title": "Features and customization",
+        
+        "excerpt":
+            "Features   This is a short demonstration textbook to show the general layout / style of textbooks built with Jupyter and Jekyll.   To begin, click on one of the chapter sections in the sidebar to the left. Alternatively, click on the “next” button below in order to read further.   The first sections demonstrate some simple functionality of Jupyter Books, while the final chapters contain a subset of content from the Foundations in Data Science textbook.  ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/features.html",
+        "teaser":null},{
+        "title": "Hiding code blocks or entire cells",
+        
+        "excerpt":
+            "Hiding or removing code blocks or entire cells It’s possible to control which cells show up in your final book pages. For example, you may want to display a complex visualization to illustrate an idea, but don’t want the page to be cluttered with a large code cell that generated the viz. In other cases, you may want to remove a code cell entirely. In this case, you have two options: Hiding the inputs of a code cell will hide the cell’s contents and provide a button that lets readers reveal the content. Removing the inputs (or the entire cell)...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/hiding.html",
+        "teaser":null},{
+        "title": "Connecting content with JupyterHub and Binder",
+        
+        "excerpt":
+            "Connecting content with JupyterHub and Binder Because Jupyter Books are built with Jupyter Notebooks, you can connect your online book with a Jupyter kernel running in the cloud. This lets readers quickly interact with your content in a traditional coding interface using either JupyterHub or BinderHub. This page describes a few ways to accomplish this. Creating interact buttons for BinderHub BinderHub can be used to build the environment needed to run a repository, and provides a link that lets others interact with that repository. If your Jupyter Book is hosted online on GitHub, you can automatically insert buttons that link...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/interact.html",
+        "teaser":null},{
+        "title": "Adding interactivity to your book pages",
+        
+        "excerpt":
+            "Interactive code in your book Sometimes you’d rather let people interact with code directly on the page instead of sending them off to a Binder or a JupyterHub. There are currently a few ways to make this happen in Jupyter Book (both of which are experimental). This page describes how to bring interactivity to your book. Both of these tools use MyBinder to provide a remote kernel. Making your page inputs interactive ✨experimental✨ If you’d like to provide interactivity for your content without making your readers leave the Jupyter Book site, you can use a project called Thebelab. This provides...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html",
+        "teaser":null},{
+        "title": "Feature Limits",
+        
+        "excerpt":
+            "Demo page to showcase markdown NOTE: None of the information on this page applies to Jupyter Books. It is taken from the Markdown documentation, and is meant to give an idea of how Jupyter Book renders really long pages of very diverse content! Amount of Content You should be able to put as much content, and as many headings, within each chapter as you want. In order to enable this we allow the table of contents on the right hand side to be scrollable. All of the sections on here allow us to test that. And they’ll give you a...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/limits.html",
+        "teaser":null},{
+        "title": "Markdown files",
+        
+        "excerpt":
+            "Creating book content The two kinds of files that contain course content are: Jupyter Notebooks Markdown files Each are contained in the content/ folder and referenced from _data/toc.yml. If the file is markdown, it will be copied over with front-matter YAML added so that Jekyll can parse it. print(\"Python (and any language-specific) code still works as expected\") As does non-language code. Sidebars with Jekyll You may notice that there’s a sidebar to the right (if your screen is wide enough). These are automatically generated from the headers that are present in your page. The sidebar will automatically capture all 2nd...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/markdown.html",
+        "teaser":null},{
+        "title": "Jupyter notebooks",
+        
+        "excerpt":
+            "Content with notebooks You can also create content with Jupyter Notebooks. The content for the current page is contained in a Jupyter Notebook in the notebooks/ folder of the repository. This means that we can include code blocks and their outputs, and export them to Jekyll markdown. You can find the original notebook for this page at this address Markdown + notebooks As it is markdown, you can embed images, HTML, etc into your posts! You an also $add_{math}$ and or But make sure you \\$Escape \\$your \\$dollar signs \\$you want to keep! Code blocks and image outputs Textbooks with...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/notebooks.html",
+        "teaser":null},{
+        "title": "Searching your book",
+        
+        "excerpt":
+            "Searching your book It’s possible to enable search in your book so that users can find the content they’re looking for. This uses a nifty package called lunr.js. To add search to your book, simple add the following entry to _data/toc.yml. - title: Search (whatever title you like) search: true The result will be a link in your Table of Contents that directs users to a search page. For example, click the Search link in the TOC of this demo book. Customizing how much text is stored in search The Jupyter-Book search works by storing excerpts of text from each...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/features/search.html",
+        "teaser":null},{
+        "title": "Getting started",
+        
+        "excerpt":
+            "The Jupyter Book Guide This is a guide for creating your own book using Jupyter Notebooks and Jekyll. Book content is written in markdown and Jupyter Notebooks, and jupyter-book converts these into a book fit for hosting on the web. Install the command-line interface First off, make sure you have the CLI installed so that you can work with Jupyter Book. The Jupyter-Book CLI allows you to create, build, upgrade, and otherwise control your Jupyter Book. You can install it via pip with the following command: pip install jupyter-book A quick tour of a Jupyter Book Jupyter-Book comes with a...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/guide/01_overview.html",
+        "teaser":null},{
+        "title": "Create your book",
+        
+        "excerpt":
+            "Create your Jupyter Book This page covers how to create a Jupyter Book with your own content. You’ve got three primary ways to create your Jupyter Book. by starting with a minimal book Running the following command will create a new Jupyter Book with a few content pages and a Table of Contents to get you started: jupyter-book create mybookname This will create a new book using your content in mybookname/. You’ll then need to Add your content to mybookname/content/ Modify mybookname/_data/toc.yml to match your content Modify mybookname/_config.yml to the configuration you’d like Note that if you choose to create...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/guide/02_create.html",
+        "teaser":null},{
+        "title": "Build and publish your book",
+        
+        "excerpt":
+            "Building and publishing your book Once you’ve added content and configured your book, it’s time to build the raw material that Jekyll will use to turn your book into a website. We’ll also cover how to turn this book into the HTML for a website that can be served online. Build the book’s markdown Now that you’ve got the files installed content is in the book, you can build your book. Build your book by running the following command: jupyter-book build mybookname/ This will: Use the links specified in the _data/toc.yml file (pointing to files in /content/) and do the...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/guide/03_build.html",
+        "teaser":null},{
+        "title": "FAQ",
+        
+        "excerpt":
+            "The following are some common issues and questions that have arisen when building your textbook with Jekyll. How can I update my book? Sometimes Jupyter Book will get updates that you want to incorporate into a book you’ve already built. The easiest way to do this is to use the Command-Line Interface to upgrade your book. To upgrade a pre-existing Jupyter Book, run the following command: jupyter-book upgrade path/to/mybook This will do the following: Generate a fresh Jupyter Book in mybook_UPGRADED using the content files in your current book. If this succeeds, copy over the contents of mybook_UPGRADED into your...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/guide/04_faq.html",
+        "teaser":null},{
+        "title": "How-to and advanced topics",
+        
+        "excerpt":
+            "This page contains more advanced and complete information about the jupyter-book repository. See the sections below. Hide cells or cell outputs in the built site Sometimes you want to use code to generate visualizations or prepare data, but you don’t want users to see it in your built book. To prevent code cells from showing up in your built site, you can use the following two configuration options in your _config.yml file. To remove entire code cells from your book, use the following configuration: hide_cell_text : \"YOUR TEXT\" Any code cell with the value of hide_cell_text (above it is YOUR...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/guide/05_advanced.html",
+        "teaser":null},{
+        "title": "Introduction",
+        
+        "excerpt":
+            "Books with Jupyter and Jekyll Jupyter Books lets you build an online book using a collection of Jupyter Notebooks and Markdown files. Its output is similar to the excellent Bookdown tool, and adds extra functionality for people running a Jupyter stack. For an example of a book built with Jupyter Books, see the textbook for Data 100 at UC Berkeley (or this website!) Here are a few features of Jupyter Books A Command-Line Interface (CLI) to quickly create, build, and upgrade books. Write book content in markdown and Jupyter Notebooks Convert these into Jekyll pages that can be hosted for...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/intro.html",
+        "teaser":null},]
+</script>
+              <nav class="c-page__nav">
+  
+
+  
+</nav>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,145 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+
+- title: Introduction
+  url: intro
+  not_numbered: true
+- title: Search
+  search: true
+  not_numbered: true
+- divider: true
+
+- title: Using Jupyter Notebooks
+  url: /01/using-jupyter-notebooks
+  sections:
+  - title: Introduction to Jupyter Notebooks
+    url: /01/1/intro_jupyter_notebooks
+  - title: Debugging Jupyter Notebooks
+    url: /01/2/debugging_jupyter_notebooks
+
+- divider: true
+
+- title: Datatypes and Variables
+  url: /02/datatypes-and-variables
+  sections:
+  - title: Introduction to python and Notebooks Practice
+    url: /02/1/intro_python_and_notebooks_practice
+  - title: Data Types and Operations
+    url: /02/2/data_types_operations
+  - title: Casting
+    url: /02/3/casting
+
+- title: Debugging
+  url: /03/debugging
+  sections:
+  - title: Debugging Python Code
+    url: /03/1/debugging_python_code
+
+- title: Functions
+  url: /04/functions
+  sections:
+  - title: Input and Using Functions
+    url: /04/1/input
+  - title: Using Functions
+    url: /04/2/using_functions
+  - title: Built-in Functions
+    url: /04/3/builtin_functions
+  - title: Writing Functions
+    url: /04/4/writing_functions
+  - title: Writing Functions with Parameters
+    url: /04/5/writing_functions_parameters
+  - title: Main
+    url: /04/6/main
+  - title: Functions and Returns
+    url: /04/7/functions_returns
+
+- title: Conditionals
+  url: /05/conditionals
+  sections:
+  - title: Logical Expressions
+    url: /05/1/logical_expressions
+  - title: if Statements
+    url: /05/2/if_statements
+  - title: if-else Statements
+    url: /05/3/if_else
+  - title: if-elif Statements
+    url: /05/4/if_elif
+  - title: if-then-if vs. if-elif Statements
+    url: /05/5/ifif_vs_ifelif
+  - title: not
+    url: 05/6/not
+
+- title: Iteration and Loops
+  url: /06/iteration-and-loops
+  sections:
+    - title: While Loops
+      url: /06/1/while_loops_basics
+    - title: Common While Loops Patters
+      url: /06/2/common_while_uses
+
+- title: Lists
+  url: /07/lists
+  sections:
+    - title: Lists Basics
+      url: /07/1/lists_basics
+    - title: Strings as Lists
+      url: /07/2/strings_as_lists
+    - title: Strings, Lists, and Mutating
+      url: /07/3/strings_lists_mutating
+    - title: Slicing
+      url: /07/4/slicing
+    - title: Lists and Scope
+      url: /07/5/lists_scope
+    - title: Lists and Built-in Functions
+      url: /07/6/lists_builtin_functions
+
+- title: For Loops
+  url: /08/for-loops
+  sections:
+    - title: For Loops Basics
+      url: /08/1/for_loops_basics
+    - title: For Loops and the Accumulator Pattern
+      url: /08/2/accumulator
+    - title: Nested For Loops
+      url: /08/3/nested_forloops
+
+- title: Modules
+  url: /09/modules
+  sections:
+    - title: Using Modules
+      url: /09/1/using_modules
+    - title: "Example: Measuring Runtime"
+      url: /09/2/measuring_runtime
+
+- title: File input/output
+  url: /10/file-io
+  sections:
+    - title: File input/output basics
+      url: /10/1/fileio
+
+- title: matplotlib and Graphing
+  url: /11/matplotlib
+  sections:
+    - title: Introduction to matplotlib
+      url: /11/1/matplotlib
+
+- title: Objects
+  url: /12/objects
+  sections:
+    - title: Using Objects (part 1)
+      url: /12/1/using_objects_part1
