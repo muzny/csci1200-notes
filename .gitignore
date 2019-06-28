@@ -1,2 +1,8 @@
+# Template build
+1200notes/_build
+
+# notebooks
 **/*.ipynb_checkpoints/
+
+# mac specific
 .DS_Store
