@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Introduction to Jupyter Notebooks</title>
-  <meta name="description" content="Welcome to the CSCI 1200 interactive notes and workbook!">
+  <meta name="description" content="Anatomy of a Jupyter Notebook">
 
   <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/01/1/intro_jupyter_notebooks.html">
   <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://0.0.0.0:4000/jupyter-book/feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/01/1/intro_jupyter_notebooks.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Introduction to Jupyter Notebooks" />
-<meta property="og:description" content="Welcome to the CSCI 1200 interactive notes and workbook!" />
+<meta property="og:description" content="Anatomy of a Jupyter Notebook" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "Introduction to Jupyter Notebooks",
   "datePublished":
-    "2019-06-28T15:04:16-05:00",
+    "2019-07-02T13:22:40-05:00",
   "dateModified":
-    "2019-06-28T15:04:16-05:00",
+    "2019-07-02T13:22:40-05:00",
   "description":
-    "Welcome to the CSCI 1200 interactive notes and workbook!",
+    "Anatomy of a Jupyter Notebook",
   "author": {
     "@type": "Person",
     "name": "The Jupyter Book Community"
@@ -1866,53 +1866,53 @@ initFunction(initQuery);
 
 
             <div class="c-textbook__content">
-              <h1 id="welcome-to-the-csci-1200-interactive-notes-and-workbook">Welcome to the CSCI 1200 interactive notes and workbook!</h1>
+              <h1 id="anatomy-of-a-jupyter-notebook">Anatomy of a Jupyter Notebook</h1>
 
-<p>This set of notes is meant to supplement the lectures and lab materials.<br />
-These notes are a great place to review concepts that we’ve been over in class and to play around with code.</p>
+<p>Jupyter Notebooks are centered around units called <strong>cells</strong>.</p>
 
-<p>If you ever worry that you have deleted a part of one of these notebooks, or messed it up in some way, remember that you can always re-download them  from the course website!</p>
+<p><strong>cell</strong>:  an editable area where you write blocks of code or text.</p>
 
-<p>For the links between notebooks to work in these notes, you need to preserve the structure that we provide (all week 1 notes in the <code class="highlighter-rouge">week_1</code> folder, all of the <code class="highlighter-rouge">week</code> folders located in the same parent folder).</p>
+<p>We’ll be writing code using the <code class="highlighter-rouge">python</code> programming language in this course, but Jupyter Notebooks can run code in many different programming languages.</p>
 
-<p>Now, let’s get down to business.</p>
+<p>A single notebook is composed of a series of one or more cells. Running a notebook entails running the cells that it contains.</p>
 
-<h2 id="anatomy-of-a-jupyter-notebook">Anatomy of a Jupyter Notebook</h2>
-<p>Jupyter Notebooks are centered around units called “cells”. Cells are where you write code (and also where we are writing instructions now). We’ll be writing code using the <code class="highlighter-rouge">python</code> programming language in this course.</p>
+<h2 id="controlling-cells">Controlling cells</h2>
 
-<p>In these notes you’ll see code inserted in two different ways:</p>
-<ol>
-  <li>embedded in text (non-interactive)<br />
-<code class="highlighter-rouge">print("hello")</code> inline or in it’s own block as below:</li>
-</ol>
+<h3 id="cell-types">Cell types</h3>
+<p>when you select a cell, it can be one of four different types: <code class="highlighter-rouge">Code</code>, <code class="highlighter-rouge">Markdown</code>, <code class="highlighter-rouge">Raw NBConvert</code>, or <code class="highlighter-rouge">Heading</code>. The drop-down menu at the top of the page will show you what type the current cell is and allow you to change it if necessary.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"ahoy"</span><span class="p">)</span>
-</code></pre></div></div>
-<ol>
-  <li>in a cell (interactive! see below)</li>
-</ol>
+<p>Notice that when a cell is a code cell, it has the text <code class="highlighter-rouge">In [  ] :</code> to the left of it. If it doesn’t have this text, that means that this cell is not a code cell and will not execute as you expect if you try to run it! (It won’t break anything, it just won’t run your code as python code!)</p>
+
+<p>We write our text instructions in your notebooks in <code class="highlighter-rouge">Markdown</code> cells, which allows us to write formatted text that can be <strong>bold</strong>, <em>italic</em>, etc.</p>
+
+<h3 id="running-cells">Running cells</h3>
+<p>When we “run a cell”, what we are doing is <em>executing the code</em> that a cell contains. Each cell is run independently (running one cell will not run code in another cell).</p>
+
+<p>Notice a few things that happen when we run a cell:</p>
+<ul>
+  <li>the <code class="highlighter-rouge">In [  ] :</code> text updates so that it contains the next number, starting with a 1. This is to help us keep track of the order that we have run our cells in.</li>
+  <li>any output that the code in the cell produces appears in the non-editable area beneath it.</li>
+  <li>any errors that the code in the cell produces appears in the non-editable area beneath it.</li>
+</ul>
+
+<p>Try copy+pasting the code below into a cell in a notebook and see what happens when you run it. There are many ways to run a cell in a jupyter notebook. Try to find at least two different ways. Watch how the number in the brackets of <code class="highlighter-rouge">In [  ] :</code> updates. (Hint: click on the cell that you want to run, then look at the “Cell” menu at the top of the page.)</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell.</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"greetings"</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"greetings"</span><span class="p">)</span>
 
 </code></pre></div>    </div>
   </div>
 
 </div>
 
-<p>Notice that when code is in interactive cells, it has the text <code class="highlighter-rouge">In [  ] :</code> to the left of it. When we run a cell, this will update with the next number, starting with a 1. This is to help us keep track of the order that we have run our cells in.</p>
-
-<p>Let’s try running the code in the cell above and see what happens. There are many ways to run a cell in a jupyter notebook. Try to find at least two different ways. Watch how the number in the brackets of <code class="highlighter-rouge">In [  ] :</code> updates. (Hint: click on the cell that you want to run, then look at the “Cell” menu at the top of the page.)</p>
-
-<p>You can modify the interactive cells to change what happens when they run. Try to modify the cell above this one with the <code class="highlighter-rouge">print</code> function so that it prints out a different word instead of “greetings”.</p>
-
-<h2 id="what-is-a-kernel">What is a Kernel?</h2>
+<h2 id="what-is-the-kernel">What is the Kernel?</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">Wikipedia</a> definition: The kernel is a computer program that is the core of a computer’s operating system, with complete control over everything in the system.</p>
 
-<p><strong>What you need to know</strong>: The kernel is what is making it so that our jupyter notebooks run. Each notebook has a separate kernel so that code from separate notebooks don’t cause problems with each other. The “Kernel” menu is what will let you restart your notebook if it starts not responding or if you want to double check that your answers are correct from a “clean” starting state (more on this in later course notes on debugging juptyer notebooks).</p>
+<p><strong>What you need to know</strong>: The kernel is what is executing the code in our notebooks. It is what takes code like <code class="highlighter-rouge">print("hello")</code> and makes it so the program outputs the text “hello”. You must have a running kernel to execute the code in your notebook. For this course, your kernel should always be <code class="highlighter-rouge">Python 3</code>. This is indicated in the upper right-hand side of the notebook, next to a circle that changes to tell you the status of the kernel (idle, running, etc).</p>
+
+<p>Each notebook has a separate kernel so that code from separate notebooks don’t cause problems with each other. The “Kernel” menu is what will let you restart your notebook if it starts not responding or if you want to double check that your answers are correct from a “clean” starting state (more on this in later course notes).</p>
 
 <h2 id="completing-exercises">Completing Exercises</h2>
 
@@ -1922,7 +1922,8 @@ These notes are a great place to review concepts that we’ve been over in class
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: edit this cell so that when you run it, it prints out your name</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: edit this cell so that when you run it,</span>
+<span class="c"># it prints out your name</span>
 <span class="k">print</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
 
 </code></pre></div>    </div>
@@ -1936,9 +1937,9 @@ These notes are a great place to review concepts that we’ve been over in class
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: fill in the blank</span>
 <span class="c"># When I run a print statement in a jupyter notebook, the output</span>
-<span class="c"># is printed _________ the cell.</span>
+<span class="c"># is printed _________ (above/below) the cell.</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s">"The closests living relatives to the rock hyrax are elephants!"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The closest living relatives to the rock hyrax are elephants!"</span><span class="p">)</span>
 
 </code></pre></div>    </div>
   </div>
@@ -1961,7 +1962,8 @@ These notes are a great place to review concepts that we’ve been over in class
 <div class="cell code_cell">
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: what are three different ways to run a cell in a jupyter notebook?</span>
-<span class="c"># (hint: 2 ways involve clicking on menus/buttons, 1 way uses the keyboard)</span>
+<span class="c"># (hint: 2 ways involve clicking on menus/buttons,</span>
+<span class="c"># 1 way uses the keyboard)</span>
 <span class="c"># Answer:</span>
 
 </code></pre></div>    </div>
@@ -1969,20 +1971,15 @@ These notes are a great place to review concepts that we’ve been over in class
 
 </div>
 
-<h2 id="editing-these-notebooks">Editing these Notebooks</h2>
-<p>If you accidentally delete/change/etc a cell, use the “Edit” menu at the top of the page to help undo your change.</p>
+<h2 id="editing-jupyter-notebooks">Editing Jupyter Notebooks</h2>
+
+<p>If you accidentally delete/change/etc a cell in a notebook, use the “Edit” menu at the top of the page to help undo your change.</p>
 
 <p>You can also use copy, paste, and undo shortcuts that you may be used to using in programs like Microsoft Word.</p>
 
-<p>Similarly, you can save the changes to these notebooks, if for instance, you are working on an example and want to show your work to your TA the next day. The “File” menu has a saving option, there is a save button (the floppy disk icon), and you can also use the keyboard saving shortcut that you may be used to.</p>
+<p>Similarly, you can save the changes to notebooks, if for instance, you are working on an example and want to show your work to your TA the next day. The “File” menu has a save, there is a save button (the floppy disk icon), and you can also use the keyboard saving shortcut that you may be used to.</p>
 
-<h2 id="troubleshooting-these-notebooks">Troubleshooting these Notebooks</h2>
-
-<p>You may find that you ran a cell and it is taking much longer than it should. Rather than closing Jupyter Notebook, you can press the stop button (to the right of the run button just below the “Kernel” menu). What this will do is interupt the code that you were running, which can be very helpful.</p>
-
-<h1 id="acknowledgements">Acknowledgements</h1>
-
-<p>These notes have taken much inspiration from the interactive textbook How to Think Like a Computer Scientist by Brad MIller and David Ranum.</p>
+<p>The status of whether or not there are unsaved changes is shown to the right of the file name.</p>
 
 
               <nav class="c-page__nav">

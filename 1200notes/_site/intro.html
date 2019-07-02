@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Introduction</title>
-  <meta name="description" content="Books with Jupyter and Jekyll">
+  <meta name="description" content="What are these notes?">
 
   <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/intro.html">
   <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://0.0.0.0:4000/jupyter-book/feed.xml">
@@ -16,7 +16,7 @@
   <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/intro.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Introduction" />
-<meta property="og:description" content="Books with Jupyter and Jekyll" />
+<meta property="og:description" content="What are these notes?" />
 <meta property="og:image"       content="" />
 
 
@@ -29,11 +29,11 @@
   "headline":
     "Introduction",
   "datePublished":
-    "2019-06-28T15:04:16-05:00",
+    "2019-07-02T13:22:40-05:00",
   "dateModified":
-    "2019-06-28T15:04:16-05:00",
+    "2019-07-02T13:22:40-05:00",
   "description":
-    "Books with Jupyter and Jekyll",
+    "What are these notes?",
   "author": {
     "@type": "Person",
     "name": "The Jupyter Book Community"
@@ -1844,79 +1844,62 @@ initFunction(initQuery);
 </div>
 
             
+<div class="buttons">
+<a href="/jupyter-book/content/intro.ipynb" download>
+<button id="interact-button-download" class="interact-button">Download</button>
+</a>
+
+<button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+
+
+
+
+
+
+
+
+<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2Fintro.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/jupyter-book/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+
+
+</div>
+
 
             <div class="c-textbook__content">
-              <h1 id="books-with-jupyter-and-jekyll">Books with Jupyter and Jekyll</h1>
+              <h1 id="what-are-these-notes">What are these notes?</h1>
 
-<p><img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left" /></p>
+<p>This set of notes is meant to supplement lecture and lab materials. They are not intended to be sufficient standalone material to master python or the other concepts covered in class.</p>
 
-<p>Jupyter Books lets you build an online book using a collection of Jupyter Notebooks
-and Markdown files. Its output is similar to the excellent <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> tool,
-and adds extra functionality for people running a Jupyter stack.</p>
+<p>These notes are a great place to review concepts that we’ve been over in class and to play around with code. The examples that are given in these notes are great places to start if you are confused about a topic or would like to discuss how a specific example of code works.</p>
 
-<p>For an example of a book built with Jupyter Books, see the <a href="https://www.textbook.ds100.org/">textbook for Data 100</a> at UC Berkeley (or this website!)</p>
+<h1 id="working-with-these-notes">Working with these notes</h1>
 
-<p>Here are a few features of Jupyter Books</p>
-
-<ul>
-  <li>A Command-Line Interface (CLI) to quickly create, build, and upgrade books.</li>
-  <li>Write book content in markdown and Jupyter Notebooks</li>
-  <li>Convert these into Jekyll pages that can be hosted for free on GitHub</li>
-  <li>Pages can have <a href="https://mybinder.org">Binder</a>, JupyterHub, or Theblab links
-automatically added for interactivity.</li>
-  <li>The website itself is based on Jekyll and is highly extensible.</li>
-  <li>There are lots of nifty HTML features under-the-hood, such as
-Turbolinks fast-navigation and click-to-copy in code cells.</li>
-</ul>
-
-<p>Check out other features in the <a href="features/features">Features section</a>.</p>
-
-<h2 id="getting-started">Getting started</h2>
-
-<p>To get started, you may be interested in the following links.
-Here are a few links of interest:</p>
-
-<ul>
-  <li>
-    <p><strong><a href="features/features">Jupyter Book features</a></strong> is a quick demo and overview
-of Jupyter Books.</p>
+<p>In these notes you’ll see code in three different ways:</p>
+<ol>
+  <li>Non-interactive: embedded in text inline like <code class="highlighter-rouge">print("hello")</code>.</li>
+  <li>Non-interactive: embedded in it’s own code block.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"ahoy"</span><span class="p">)</span>
+</code></pre></div>    </div>
   </li>
-  <li>
-    <p><strong><a href="guide/01_overview">The Jupyter Book Guide</a></strong>
-will step you through the process of configuring and building your own Jupyter Book.</p>
-  </li>
-</ul>
+  <li>Interactive: in a editable, runnable block. (Notice that there is <strong>both</strong> a “interactive mode” and a “copy” icon in the upper right of this block. This makes it easy for you to copy+paste this code into a Jupyter Notebook on your computer.)</li>
+</ol>
 
-<h3 id="installation">Installation</h3>
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell by clicking "interactive mode", </span>
+<span class="c"># then clicking the "run" button</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"greetings"</span><span class="p">)</span>
 
-<p>To install the Jupyter Book command-line interface (CLI), use <code class="highlighter-rouge">pip</code>!</p>
+</code></pre></div>    </div>
+  </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install jupyter-book
-</code></pre></div></div>
-
-<h3 id="create-a-new-book">Create a new book</h3>
-
-<p>Once you’ve installed the CLI, create a new book using the demo book content
-(the website that you’re viewing now) with this command:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter-book create mybookname --demo
-</code></pre></div></div>
-
-<h3 id="build-the-markdown-for-your-book">Build the markdown for your book</h3>
-
-<p>Now, build the markdown that Jekyll will use for your book. Run this command:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter-book build mybookname
-</code></pre></div></div>
-
-<h3 id="thats-it">That’s it!</h3>
-
-<p>You can now either push your book to GitHub and serve the demo with gh-pages,
-or modify the book with your own content.</p>
+</div>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-<p>Jupyter Books was originally created by <a href="http://www.samlau.me/">Sam Lau</a> and <a href="https://predictablynoisy.com">Chris Holdgraf</a>
+<p>These notes have taken much inspiration from the interactive textbook How to Think Like a Computer Scientist by Brad MIller and David Ranum.</p>
+
+<p>These notes use the Jupyter Books package which was originally created by <a href="http://www.samlau.me/">Sam Lau</a> and <a href="https://predictablynoisy.com">Chris Holdgraf</a>
 with support of the <strong>UC Berkeley Data Science Education Program and the
 <a href="https://bids.berkeley.edu/">Berkeley Institute for Data Science</a></strong>.</p>
 

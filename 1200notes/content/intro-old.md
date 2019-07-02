@@ -1,3 +1,12 @@
+# What are these notes?
+
+This set of notes is meant to supplement lecture and lab materials. They are not intended to be sufficient standalone material to master python or the other concepts covered in class.
+
+These notes are a great place to review concepts that we've been over in class and to play around with code. The examples that are given in these notes are great places to start if you are confused about a topic or would like to discuss how a specific example of code works.
+
+# Working with these notes
+
+
 # Books with Jupyter and Jekyll
 
 <img src="https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg" class="left">
