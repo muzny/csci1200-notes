@@ -29,9 +29,9 @@
   "headline":
     "Data Types and Operations",
   "datePublished":
-    "2019-07-05T14:13:21-05:00",
+    "2019-07-05T14:59:45-05:00",
   "dateModified":
-    "2019-07-05T14:13:21-05:00",
+    "2019-07-05T14:59:45-05:00",
   "description":
     "Data Types",
   "author": {
@@ -1951,7 +1951,7 @@ initFunction(initQuery);
     <tr>
       <td>string</td>
       <td>str</td>
-      <td>“hello”, “csci1200”, “sentences are strings”, “3.0”, “remember to start your homework early!”</td>
+      <td>“hello”, “sentences are strings”,   “3.0”, “remember to start your homework early!”</td>
     </tr>
     <tr>
       <td>boolean</td>
@@ -1991,35 +1991,14 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: declare a variable of each type</span>
-<span class="n">my_int</span> <span class="o">=</span> <span class="mi">7</span> <span class="c"># an example integer declaration</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: print a value of each type</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c"># an example that prints an integer value</span>
 
 
 </code></pre></div>    </div>
   </div>
 
 </div>
-
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">whos</span>
-
-</code></pre></div>    </div>
-  </div>
-
-</div>
-
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: what are the 3 things that the whos tool tells you?</span>
-<span class="c"># Answer: </span>
-
-</code></pre></div>    </div>
-  </div>
-
-</div>
-
-<p>Remember that you can read more about <code class="highlighter-rouge">whos</code> in <a href="../01_jupyter_notebooks/02_debugging_jupyter_notebooks.ipynb">the installment of these notes on debugging jupyter notebooks</a>.</p>
 
 <h1 id="operations">Operations</h1>
 
@@ -2066,29 +2045,28 @@ initFunction(initQuery);
 
 <p>Let’s play around!</p>
 
-<p>Some of these operators are ones you probably haven’t seen before—go ahead and play around with them. Post on Piazza, come to office hours, etc!</p>
+<p>Some of these operators are ones you probably haven’t seen before—go ahead and play around with them.</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Notice that we didn't save the value in a variable.</span>
-<span class="c"># When we do a calculation like this in a Jupyter Notebook, we are not </span>
-<span class="c"># saving the value, but it's a fast and easy way to see what the result of</span>
-<span class="c"># something might be!</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
 
-<span class="c"># The Out [ ]: indication to the left helps show us that this is __only__ </span>
-<span class="c"># output, we can't reference it later.</span>
 
 <span class="mi">5</span> <span class="o">+</span> <span class="mi">9</span>
 
-<span class="c"># If you were to add another calculation below this one, we would only</span>
-<span class="c"># see the results of the second calculation.</span>
+<span class="c"># If you were to add another calculation below this one,</span>
+<span class="c"># we would only see the results of the second calculation.</span>
+
 <span class="c"># TODO: type a second calculation below this line and re-run the cell.</span>
+
 
 
 </code></pre></div>    </div>
   </div>
 
 </div>
+
+<p>We “lose” the first value that we calculated because we haven’t saved the result anywhere. In the next section (variables), we’ll learn how to save values so that we can use them again in the future.</p>
 
 <div class="cell code_cell">
   <div class="input_area">

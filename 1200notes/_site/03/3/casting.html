@@ -29,9 +29,9 @@
   "headline":
     "Casting",
   "datePublished":
-    "2019-07-05T14:13:21-05:00",
+    "2019-07-05T14:59:45-05:00",
   "dateModified":
-    "2019-07-05T14:13:21-05:00",
+    "2019-07-05T14:59:45-05:00",
   "description":
     "Type Conversions (Casting)",
   "author": {
@@ -1925,9 +1925,9 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="type-conversions-casting">Type Conversions (Casting)</h1>
 
-<p>In <a href="02_datatypes_operations.ipynb">the previous installement</a> of these notes, we learned about different types and doing operations on them, such as adding <code class="highlighter-rouge">int</code>s together (<code class="highlighter-rouge">17 + 32</code>).</p>
+<p>Earlier in this chapter of the notes, we learned about different types and doing operations on them, such as adding <code class="highlighter-rouge">int</code>s together (<code class="highlighter-rouge">17 + 32</code>).</p>
 
-<p>Some of these operations result in a value of the same type (<code class="highlighter-rouge">17 + 32</code> is <code class="highlighter-rouge">49</code>, which is also an int), while some operations change the type. For instance, <code class="highlighter-rouge">17 + 32.0</code> changes the result into <code class="highlighter-rouge">49.0</code>, which is a <code class="highlighter-rouge">float</code>.</p>
+<p>Some of these operations result in a value of the same type (<code class="highlighter-rouge">17 + 32</code> is <code class="highlighter-rouge">49</code>, which is also an <code class="highlighter-rouge">int</code>), while some operations change the type. For instance, <code class="highlighter-rouge">17 + 32.0</code> changes the result into <code class="highlighter-rouge">49.0</code>, which is a <code class="highlighter-rouge">float</code>.</p>
 
 <p>There are two general ways to convert values from one type to another:</p>
 <ol>
@@ -1937,8 +1937,15 @@ initFunction(initQuery);
 
 <p>Before we get into the details of these, let’s take a look at the <code class="highlighter-rouge">type()</code> function. This is a function like the <code class="highlighter-rouge">print()</code> function. It takes one argument of any value and tells you what type that value is:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">type</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c">#output -- int</span>
-</code></pre></div></div>
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c"># the output should be "int"</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
 
 <div class="cell code_cell">
   <div class="input_area">
@@ -1950,10 +1957,13 @@ initFunction(initQuery);
 
 </div>
 
+<p>We can also pass a variable to the <code class="highlighter-rouge">type()</code> function. When we pass a variable to the <code class="highlighter-rouge">type()</code> function, we are asking “what is the type of the value stored in this variable?”.</p>
+
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell, then play around with it more.</span>
-<span class="c"># we can also pass variables to the type function as its argument</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, then play around with it more.</span>
+<span class="c"># we can also pass variables to the type </span>
+<span class="c"># function as its argument</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">12.4</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -1962,7 +1972,7 @@ initFunction(initQuery);
 
 </div>
 
-<p>Now that we know another way (remember the <code class="highlighter-rouge">whos</code> notebook tool?) to find the type of variables, let’s learn about actually changing data types.</p>
+<p>Now that we know another way (with jupyter notebooks we have the <code class="highlighter-rouge">whos</code> notebook tool) to find the type of variables, let’s learn about actually changing data types.</p>
 
 <h2 id="the-math-way">The Math Way</h2>
 
@@ -1989,7 +1999,7 @@ initFunction(initQuery);
 
 </div>
 
-<p>However, we can’t go the other way around–using integer divide <code class="highlighter-rouge">//</code> doesn’t give us an <code class="highlighter-rouge">int</code> if we started with a <code class="highlighter-rouge">float</code>!</p>
+<p>When we use math to convert types in python, we can change from <code class="highlighter-rouge">int</code> to <code class="highlighter-rouge">float</code> but we can’t do the reverse! Even if we use integer divide <code class="highlighter-rouge">//</code>, this won’t give us an <code class="highlighter-rouge">int</code> if <strong>any</strong> of the numbers started as <code class="highlighter-rouge">float</code>s!</p>
 
 <h1 id="the-casting-way">The Casting Way</h1>
 
@@ -2001,7 +2011,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. play with the int() function</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code. play with the int() function</span>
 
 <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">7.2</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">7.9</span><span class="p">))</span>
@@ -2071,7 +2081,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="nb">int</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>  <span class="c"># What does this even mean anyways?</span>
 
 </code></pre></div>    </div>

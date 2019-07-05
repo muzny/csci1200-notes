@@ -1,6 +1,10 @@
 # Template build
 1200notes/_build
 
+# vim detritus
+*.swp
+*.swo
+
 # notebooks
 **/*.ipynb_checkpoints/
 
