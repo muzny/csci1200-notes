@@ -34,21 +34,27 @@
 
 - divider: true
 
-- title: Datatypes and Variables
-  url: /02/datatypes-and-variables
+- title: Computers and Python
+  url: /02/computers-and-python
   sections:
-  - title: Introduction to python and Notebooks Practice
-    url: /02/1/intro_python_and_notebooks_practice
-  - title: Data Types and Operations
-    url: /02/2/data_types_operations
-  - title: Casting
-    url: /02/3/casting
-
-- title: Debugging
-  url: /03/debugging
-  sections:
+  - title: Introduction to Computers
+    url: /02/1/intro_computers
+  - title: Introduction to Python
+    url: /02/2/intro_python
+  - title: Writing a Program
+    url: /02/3/first_program
   - title: Debugging Python Code
-    url: /03/1/debugging_python_code
+    url: /02/4/debugging_python_code
+
+- title: Datatypes and Variables
+  url: /03/datatypes-and-variables
+  sections:
+  - title: Data Types and Operations
+    url: /03/1/data_types_operations
+  - title: Variables
+    url: /03/2/variables
+  - title: Casting
+    url: /03/3/casting
 
 - title: Functions
   url: /04/functions
