@@ -1,13 +1,13 @@
 CSCI 1200 Course Notes
 ======================
 
-These course notes go alongsidde the content for CSCI 1200 at the University of Colorado, Boulder. They are written as a series of jupyter notebooks and can be made into a servable book via the [jupyter-book](https://github.com/jupyter/jupyter-book) package.
-
-Current status:
-buildable: ✅
-within-book links: ❌
-pictures/media support working: unchecked
-all sections pressent: ❌ 
+These course notes go alongsidde the content for CSCI 1200 at the University of Colorado, Boulder. They are written as a series of jupyter notebooks and can be made into a servable book via the [jupyter-book](https://github.com/jupyter/jupyter-book) package.  
+  
+Current status:  
+buildable: ✅  
+within-book links: ❌  
+pictures/media support working: unchecked  
+all sections pressent: ❌   
 
 Building
 --------
