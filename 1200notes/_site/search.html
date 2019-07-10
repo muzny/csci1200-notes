@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "dateModified":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "description":
     "This is an example book built with Jupyter Books.",
   "author": {
@@ -862,7 +862,7 @@ initFunction(initQuery);
                   
                     2.2
                   
-                  Introduction to Python
+                  Introduction to Python and the print Function
                 </a>
 
                 
@@ -1046,7 +1046,7 @@ initFunction(initQuery);
                   
                     4.1
                   
-                  Input and Using Functions
+                  The input Function
                 </a>
 
                 
@@ -2144,7 +2144,7 @@ initFunction(initQuery);
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/1/Numbers.html",
         "teaser":null},{
-        "title": "Input and Using Functions",
+        "title": "The input Function",
         
         "excerpt":
             "The input Function The input() function is a very useful tool for making your programs interactive. Here is an example usage of this function: color = input(\"What is your favorite color? \") Let’s break down this function similarly to how we broke down the print function. The first 3 elements of the input function are the same as the print function: input this is the part of the function that says what we want to do. ( ... ) the parentheses are indicating that this function takes an argument (see part 3). \"What is your favorite color? \" this is...",
@@ -2163,7 +2163,7 @@ initFunction(initQuery);
         "title": "Using Functions",
         
         "excerpt":
-            "Using functions In previous installments of the course notes, we’ve seen the print and input functions. Functions make up the main building blocks of our programs—they are re-usable pieces of code that are nicely wrapped up for us. For instance, the implementation of the print function may have 50 lines of code, it may only have 2. We don’t know and we don’t care. To use it, we just have to write print(\"my fantastic message\"). We can give the general format for using functions as: return_value = function_name(parameters) Not all functions have all parts of this general format, but all...",
+            "Using functions In previous installments of the course notes, we’ve seen the print and input functions. Functions make up the main building blocks of our programs—they are re-usable pieces of code that are nicely wrapped up for us. For instance, the implementation of the print function may have 50 lines of code, it may only have 2. We don’t know and we don’t care. To use it, we just have to write print(\"my fantastic message\"). When we use a function, we say that we “call” that function. We can give the general format for using functions in two ways: #...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/2/using_functions.html",
@@ -2179,7 +2179,7 @@ initFunction(initQuery);
         "title": "Built-in Functions",
         
         "excerpt":
-            "Built-in Functions See course notes section 4.2 for information about how to use functions. This section is mostly a guide on what parameters and returns some (not all!) built in python functions take. “Regular” built-in functions (non-string) The python documentation for functions can be a bit confusing. Let’s walk through an example by looking at the len() function: len(s) Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set). This documentation talks about a...",
+            "Built-in Functions See the previous section of these notes for information about how to use functions. This section is mostly a guide on what parameters and returns some (not all!) built in python functions take. “Regular” built-in functions (non-string) The python documentation for functions can be a bit confusing. Let’s walk through an example by looking at the len() function: len(s) Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set). This documentation talks...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/3/builtin_functions.html",
@@ -2187,7 +2187,7 @@ initFunction(initQuery);
         "title": "Writing Functions",
         
         "excerpt":
-            "Writing Functions Let’s write and call our own functions. We’ll start with functions that do not have parameters and do not have return values. The basic format is: def function_name(): # code here # notice that it is indented # everything indented here is inside this function Python will give us an error if we try to define a function that is only comments and no code though, so let’s define a function with a print() statement in it. See section 4.5 for information on writing functions that include parameters. # TODO: run me! def dog(): print(\"labradoodle\") # After you've...",
+            "Writing Functions Let’s write and call our own functions. We’ll start with functions that do not have parameters and do not have return values. See the next section of notes for information on writing functions that include parameters. The basic format is: def function_name(): # write your code here # notice that it is indented # everything indented at this level # is inside this function Python will give us an error if we try to define a function that is only comments and no code though, so let’s define a function with a print() statement in it. # TODO:...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/4/writing_functions.html",
@@ -2195,7 +2195,7 @@ initFunction(initQuery);
         "title": "Writing Functions with Parameters",
         
         "excerpt":
-            "Writing Functions with Parameters Let’s write and call our own functions now, with parameters! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function We can give the function as many parameters as we want to in a comma separated list. Before we go on, let’s refine “parameter” a little more. (Adding to our definition from section 4.2.) parameter: information passed to the function when it is called. All parameters are given a name in the function definition. The name is how we will refer to the...",
+            "Writing Functions with Parameters Let’s write and call our own functions now, with parameters! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function We can give the function as many parameters as we want to in a comma separated list. Before we go on, let’s refine “parameter” a little more. (Adding to our definition from the previous section on using functions.) parameter: information passed to the function when it is called. All parameters are given a name in the function definition. The name is how we...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/5/writing_functions_parameters.html",
@@ -2227,7 +2227,7 @@ initFunction(initQuery);
         "title": "Functions",
         
         "excerpt":
-            " ",
+            "Functions are the basic building blocks of all the programs that we write. A function is a conveniently packaged set of instructions (or lines of code) to accomplish a common operation.   We’ve seen functions already with the print() function and the casting functions. Now we’ll learn about how to use more functions that are already provided by python (“built-in” functions) as well as how to write our very own functions.  ",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/functions.html",

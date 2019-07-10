@@ -39,7 +39,7 @@
   sections:
   - title: Introduction to Computers
     url: /02/1/intro_computers
-  - title: Introduction to Python
+  - title: Introduction to Python and the print Function
     url: /02/2/intro_python
   - title: Writing a Program
     url: /02/3/first_program
@@ -59,7 +59,7 @@
 - title: Functions
   url: /04/functions
   sections:
-  - title: Input and Using Functions
+  - title: The input Function
     url: /04/1/input
   - title: Using Functions
     url: /04/2/using_functions

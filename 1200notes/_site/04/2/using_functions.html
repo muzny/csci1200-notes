@@ -29,9 +29,9 @@
   "headline":
     "Using Functions",
   "datePublished":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "dateModified":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "description":
     "Using functions",
   "author": {
@@ -862,7 +862,7 @@ initFunction(initQuery);
                   
                     2.2
                   
-                  Introduction to Python
+                  Introduction to Python and the print Function
                 </a>
 
                 
@@ -1046,7 +1046,7 @@ initFunction(initQuery);
                   
                     4.1
                   
-                  Input and Using Functions
+                  The input Function
                 </a>
 
                 
@@ -1927,34 +1927,45 @@ initFunction(initQuery);
 
 <p>In previous installments of the course notes, we’ve seen the <code class="highlighter-rouge">print</code> and <code class="highlighter-rouge">input</code> functions.</p>
 
-<p>Functions make up the main building blocks of our programs—they are re-usable pieces of code that are nicely wrapped up for us. For instance, the implementation of the <code class="highlighter-rouge">print</code> function may have 50 lines of code, it may only have 2. We don’t know and we don’t care. To use it, we just have to write <code class="highlighter-rouge">print("my fantastic message")</code>.</p>
+<p>Functions make up the main building blocks of our programs—they are re-usable pieces of code that are nicely wrapped up for us. For instance, the implementation of the <code class="highlighter-rouge">print</code> function may have 50 lines of code, it may only have 2. We don’t know and we don’t care. To use it, we just have to write <code class="highlighter-rouge">print("my fantastic message")</code>. When we use a function, we say that we “call” that function.</p>
 
-<p>We can give the general format for using functions as:</p>
+<p>We can give the general format for using functions in two ways:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">return_value</span> <span class="o">=</span> <span class="n">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># functions with return values</span>
+<span class="n">return_value</span> <span class="o">=</span> <span class="n">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="c"># functions without return values</span>
+<span class="n">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Not all functions have all parts of this general format, but <strong>all functions do have: <code class="highlighter-rouge">function_name()</code></strong> (a name and parentheses).</p>
+<p>Take a look at some examples using the <code class="highlighter-rouge">input()</code> and <code class="highlighter-rouge">print()</code> functions that we’ve already visited. Remember that the <code class="highlighter-rouge">input()</code> function does have a return value and the <code class="highlighter-rouge">print()</code> function does not.</p>
 
-<p>If we forgot the parentheses, python would interpret <code class="highlighter-rouge">function_name</code> as a variable, which we don’t want.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># an example with a return value</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"here's a prompt? "</span><span class="p">)</span>
+
+<span class="c"># an example without a return value</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"here's a sentence"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If we forget the parentheses, the function will not run. What will happen in this case depends on if it is a <a href="../3/builtin_functions.html">built-in function</a> like <code class="highlighter-rouge">input()</code> and <code class="highlighter-rouge">print()</code> or a <a href="../4/writing_functions.html">function that you have written yourself</a>.</p>
 
 <h2 id="parametersarguments">Parameters/Arguments</h2>
 
 <p>You’ll notice that we use the words “parameters” and “arguments” pretty much interchangeably to refer to the same thing. This is ok!</p>
 
-<p><strong>Parameters</strong>: the values that a function takes and uses to perform its task. (further refined in <a href="05_writing_functions_parameters.ipynb">the 5th installment of this chapter</a>)</p>
+<p><strong>Parameters</strong>: the values that a function takes and uses to perform its task. (further refined <a href="../5/writing_functions_parameters.html">later in this chapter</a>)</p>
 
-<p>For instance, <code class="highlighter-rouge">print("my message")</code> will print out <code class="highlighter-rouge">my message</code>.</p>
+<p>For instance, <code class="highlighter-rouge">print("my message")</code> will print out the text <code class="highlighter-rouge">my message</code>.</p>
 
 <p>Some functions have a fixed number of parameters that they take. For example, the <code class="highlighter-rouge">len()</code> function only takes 1 parameter.</p>
 
-<p>Some functions can take a variable number of parameters. For example, we can write <code class="highlighter-rouge">print()</code>, <code class="highlighter-rouge">print("hello")</code>, and <code class="highlighter-rouge">print("hello", "there")</code>. These function calls all do slightly different things.</p>
+<p>Some functions can take a variable number of parameters. For example, we can write <code class="highlighter-rouge">print()</code>, <code class="highlighter-rouge">print("hello")</code>, and <code class="highlighter-rouge">print("hello", "there")</code>. When you use a function with a different number of parameters, it’s behavior will be slightly different.</p>
 
 <p>Notice that when we provide multiple parameters to a function, we use a comma (<code class="highlighter-rouge">,</code>) to separate them.</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell, what does the len() function do?</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, what does the len() function do?</span>
 <span class="c"># Answer: </span>
 <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s">"hello"</span><span class="p">))</span>
 
@@ -1965,7 +1976,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell, what happens if you run the len function </span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, what happens if you run the len function </span>
 <span class="c"># with more than one parameter?</span>
 <span class="c"># Answer: </span>
 <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s">"hello"</span><span class="p">,</span> <span class="s">"there"</span><span class="p">))</span>
@@ -1977,7 +1988,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell, what happens if you run the len function </span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, what happens if you run the len function </span>
 <span class="c"># with no parameters?</span>
 <span class="c"># Answer: </span>
 <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">())</span>
@@ -1991,9 +2002,12 @@ initFunction(initQuery);
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: compare and contrast calls to print() with variable numbers of</span>
 <span class="c"># parameters</span>
-<span class="k">print</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">,</span> <span class="s">"there"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span> <span class="c"># one parameter</span>
+<span class="k">print</span><span class="p">()</span> <span class="c"># zero parameters</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hellothere"</span><span class="p">)</span> <span class="c"># one parameter</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">,</span> <span class="s">"there"</span><span class="p">)</span> <span class="c"># two parameters</span>
+
+<span class="c"># what happens if you pass 3 strings to the print function?</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2013,7 +2027,8 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me. If we try to save a return value for a function that doesn't</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># If we try to save a return value for a function that doesn't</span>
 <span class="c"># have one, what happens?</span>
 <span class="c"># Answer:</span>
 
@@ -2027,7 +2042,10 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># now let's investigate the value of the print_return variable</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"first message"</span><span class="p">)</span>
+<span class="n">print_return</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s">"second message"</span><span class="p">)</span>
+
+<span class="c"># now let's investigate the value of the print_return variable</span>
 <span class="c"># TODO: print out the value of print_return</span>
 <span class="k">print</span><span class="p">(</span><span class="n">print_return</span><span class="p">)</span>
 
@@ -2040,7 +2058,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">None</span><span class="p">))</span>
 
 </code></pre></div>    </div>
@@ -2048,17 +2066,17 @@ initFunction(initQuery);
 
 </div>
 
-<p><code class="highlighter-rouge">None</code> is a value that doesn’t have any of our 4 basic types (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">boolean</code>). In fact, it has its own type only for itself! <code class="highlighter-rouge">None</code> is a special value that literally represents nothing. We’ll get into this more later in the course.</p>
+<p><code class="highlighter-rouge">None</code> is a value that isn’t any of our 4 basic types (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">boolean</code>). In fact, it is its own type. <code class="highlighter-rouge">None</code> is a special value that literally represents nothing. We’ll get into this more later in the course.</p>
 
 <h2 id="functions-with-return-values">Functions with return values</h2>
 
-<p>A great example of a function <em>with</em> a return value is <code class="highlighter-rouge">input()</code>. <code class="highlighter-rouge">len()</code> also has a return value. In fact, <em>most</em> functions that we will use in this course, and especially <a href="03_builtin_functions.ipynb">python’s built-in functions</a> have return values.</p>
+<p>A great example of a function <em>with</em> a return value is <code class="highlighter-rouge">input()</code>. <code class="highlighter-rouge">len()</code> also has a return value. In fact, <em>most</em> functions that we will use in this course, and especially <a href="../3/builtin_functions.html">python’s built-in functions</a> have return values.</p>
 
 <p><em><strong>Remember: if you do not save a return value in a variable, you cannot use it later!</strong></em></p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell, why do you get an error?</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, why do you get an error?</span>
 <span class="c"># Answer:</span>
 <span class="nb">input</span><span class="p">(</span><span class="s">"Do you own a labradoodle?"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
@@ -2076,7 +2094,8 @@ initFunction(initQuery);
 <div class="cell code_cell">
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: use the len() function to find the length of your favorite </span>
-<span class="c"># strings, then add these lengths together and report them to the user.</span>
+<span class="c"># strings, then add these lengths </span>
+<span class="c"># together and report them to the user.</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2085,12 +2104,14 @@ initFunction(initQuery);
 
 <h2 id="string-functions">String functions</h2>
 
-<p>Of course, it would be too simple if all functions worked exactly the same way. We’ll take more about exactly why this is, but string functions are formatted slightly differently. The general format for string functions is:</p>
+<p>Of course, it would be too simple if all functions worked exactly the same way. We’ll talk more about exactly why this is later, but string functions are formatted slightly differently.</p>
+
+<p>The general format for string functions is:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">return_value</span> <span class="o">=</span> <span class="n">string_var</span><span class="o">.</span><span class="n">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Let’s look at an example: the <code class="highlighter-rouge">islower()</code> function.</p>
+<p>Let’s look at an example: the string <code class="highlighter-rouge">islower()</code> function.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span> <span class="o">=</span> <span class="s">"I am a string!"</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
@@ -2099,7 +2120,7 @@ initFunction(initQuery);
 
 <p>What this string is doing is saying “Hey, <code class="highlighter-rouge">my_string</code> variable! I want you to tell me if you are lower case!”</p>
 
-<p>Another example: the <code class="highlighter-rouge">lower()</code> function.</p>
+<p>Another example: the string <code class="highlighter-rouge">lower()</code> function.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_string</span> <span class="o">=</span> <span class="s">"I am a string!"</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -2110,7 +2131,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="n">my_string</span> <span class="o">=</span> <span class="s">"I am a string!"</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -2122,7 +2143,8 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me, then modify this code to test whether the variable</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
+<span class="c"># then modify this code to test whether the variable</span>
 <span class="c"># result is lower case or not. Print out your final assessment.</span>
 <span class="n">my_string</span> <span class="o">=</span> <span class="s">"I am a string!"</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -2136,7 +2158,8 @@ initFunction(initQuery);
 <div class="cell code_cell">
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: now let's look at a tricky strings trap.</span>
-<span class="c"># print out the length of the following string, then print out the lower</span>
+<span class="c"># print out the length of the following string,</span>
+<span class="c"># then print out the lower</span>
 <span class="c"># case version of it.</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s">"I AM A STRING SUCH A STRINGY STRING STRING"</span>
 
@@ -2150,7 +2173,7 @@ initFunction(initQuery);
   
     
     <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/04/1/input">
-      〈 <span class="u-margin-right-tiny"></span> Input and Using Functions
+      〈 <span class="u-margin-right-tiny"></span> The input Function
     </a>
   
 

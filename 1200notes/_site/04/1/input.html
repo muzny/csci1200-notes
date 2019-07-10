@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Input and Using Functions</title>
+  <title>The input Function</title>
   <meta name="description" content="The input Function">
 
   <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/04/1/input.html">
@@ -15,7 +15,7 @@
 
   <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/04/1/input.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Input and Using Functions" />
+<meta property="og:title"       content="The input Function" />
 <meta property="og:description" content="The input Function" />
 <meta property="og:image"       content="" />
 
@@ -27,11 +27,11 @@
   "mainEntityOfPage":
     "http://0.0.0.0:4000/jupyter-book/04/1/input.html",
   "headline":
-    "Input and Using Functions",
+    "The input Function",
   "datePublished":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "dateModified":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "description":
     "The input Function",
   "author": {
@@ -862,7 +862,7 @@ initFunction(initQuery);
                   
                     2.2
                   
-                  Introduction to Python
+                  Introduction to Python and the print Function
                 </a>
 
                 
@@ -1046,7 +1046,7 @@ initFunction(initQuery);
                   
                     4.1
                   
-                  Input and Using Functions
+                  The input Function
                 </a>
 
                 
@@ -1932,7 +1932,7 @@ initFunction(initQuery);
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your favorite color? "</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Let’s break down this function similarly to how we broke down the <a href="../02_datatypes_variables/01_intro_python_and_notebooks_practice.ipynb">print function</a>.</p>
+<p>Let’s break down this function similarly to how we broke down the <a href="../../02/2/intro_python.html">print function</a>.</p>
 
 <p>The first 3 elements of the <code class="highlighter-rouge">input</code> function are the same as the <code class="highlighter-rouge">print</code> function:</p>
 
@@ -1955,8 +1955,8 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell!</span>
-<span class="c"># When you run this cell, there will be a text box where you can type.</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code!</span>
+<span class="c"># When you run this code, there will be a text box where you can type.</span>
 <span class="c"># To give answer, type in your color, then press the return key.</span>
 <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your favorite color? "</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"You answered: "</span> <span class="o">+</span> <span class="n">color</span><span class="p">)</span>
@@ -1968,14 +1968,15 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: Run this cell!</span>
-<span class="c"># This cell demonstrates the confusing behavior of input if you</span>
-<span class="c"># forget to put in a prompt</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: Run this code!</span>
+<span class="c"># This code demonstrates the confusing behavior of input if you</span>
+<span class="c"># forget to put a prompt in the parentheses</span>
 
 <span class="n">mystery</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c"># I've forgotten a prompt!</span>
 
-<span class="c"># Notice that when no prompt is given, the cell just "hangs" (keeps running)</span>
-<span class="c"># without telling the user what to do!</span>
+<span class="c"># Notice that when no prompt is given, </span>
+<span class="c"># the code just "hangs" (keeps running), waiting for the user </span>
+<span class="c"># to type a word, without telling the user what to do!</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2022,7 +2023,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Answer the question with a number.</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code. Answer the question with a number.</span>
 <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
 
@@ -2033,11 +2034,12 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: Add code to this cell so that the type of the variable age</span>
-<span class="c"># becomes an integer, then run the cell. </span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: Add code to this snippet so that the type of </span>
+<span class="c"># the variable age becomes an integer, then run the cell. </span>
 <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
 
-<span class="c"># add code here to change age to an integer</span>
+<span class="c"># add code here to change the value stored in </span>
+<span class="c"># age to an integer</span>
 
 
 <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
@@ -2049,13 +2051,15 @@ initFunction(initQuery);
 
 <h2 id="type-casting--input">Type Casting + <code class="highlighter-rouge">input</code></h2>
 
-<p>When we are using the <code class="highlighter-rouge">input</code> function, we frequently use <a href="../02_datatypes_variables/03_casting.ipynb">type casting</a> to help convert the user’s answer to the type that we actually want so that, for instance, we can do math.</p>
+<p>When we are using the <code class="highlighter-rouge">input</code> function, we frequently use <a href="../../03/3/casting.html">type casting</a> to help convert the user’s answer to the type that we actually want so that, for instance, we can do math with the user’s answer.</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. What error do you get?</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code. What error do you get?</span>
 <span class="c"># Fix the error by adding the appropriate type casting function</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What temperature is it outside (celsius)? "</span><span class="p">)</span>  
+
+<span class="c"># add code here to convert temp to a number</span>
 
 <span class="n">kelvin</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="mf">273.15</span>
 
@@ -2068,12 +2072,13 @@ initFunction(initQuery);
 
 </div>
 
-<h2 id="what-to-never-ever-do">What to never ever do</h2>
+<h2 id="danger-zone-forgetting-to-save-return-values">Danger Zone! (forgetting to save return values)</h2>
 
 <p>If you happen to write code that doesn’t save the return value, you will not be able to access that information:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c"># what is this variable? where did it come from? ERROR</span>
+<span class="c"># what is this variable? where did it come from? Produces a NameError</span>
+<span class="k">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  
 </code></pre></div></div>
 
 <p>A more devious example:</p>
@@ -2081,6 +2086,8 @@ initFunction(initQuery);
 <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you? "</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c"># No error! but NEVER the user's answer to the question</span>
 </code></pre></div></div>
+
+<p>If the user answer’s “16”, the output of the above code will still be “27”!</p>
 
 
               <nav class="c-page__nav">

@@ -1,0 +1,3 @@
+Functions are the basic building blocks of all the programs that we write. A function is a conveniently packaged set of instructions (or lines of code) to accomplish a common operation.  
+  
+We've seen functions already with the `print()` function and the casting functions. Now we'll learn about how to use more functions that are already provided by python ("built-in" functions) as well as how to write our very own functions.

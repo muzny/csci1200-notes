@@ -29,9 +29,9 @@
   "headline":
     "Built-in Functions",
   "datePublished":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "dateModified":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "description":
     "Built-in Functions",
   "author": {
@@ -862,7 +862,7 @@ initFunction(initQuery);
                   
                     2.2
                   
-                  Introduction to Python
+                  Introduction to Python and the print Function
                 </a>
 
                 
@@ -1046,7 +1046,7 @@ initFunction(initQuery);
                   
                     4.1
                   
-                  Input and Using Functions
+                  The input Function
                 </a>
 
                 
@@ -1925,14 +1925,14 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="built-in-functions">Built-in Functions</h1>
 
-<p>See course notes <a href="02_using_functions.ipynb">section 4.2</a> for information about how to use functions. This section is mostly a guide on what parameters and returns some (not all!) built in python functions take.</p>
+<p>See the previous section of these notes for information about how to use functions. This section is mostly a guide on what parameters and returns some (not all!) built in python functions take.</p>
 
 <h2 id="regular-built-in-functions-non-string">“Regular” built-in functions (non-string)</h2>
 <p>The <a href="https://docs.python.org/3/library/functions.html">python documentation</a> for functions can be a bit confusing. Let’s walk through an example by looking at the <code class="highlighter-rouge">len()</code> function:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>len(s)
+<p><code class="highlighter-rouge">len(s)</code></p>
 
-    Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
 </code></pre></div></div>
 
 <p>This documentation talks about a lot of things that we don’t know yet. That’s ok!</p>
@@ -1941,7 +1941,7 @@ initFunction(initQuery);
 <ol>
   <li><code class="highlighter-rouge">len(s)</code> – this says that this function takes 1 parameter!</li>
   <li>“Return the length (the number of items) of an object” – this says that this function has a return value that is the length of the passed in parameter.</li>
-  <li>“The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).” – this says what we can pass in to this function. <strong>For us right now</strong>, we just care that it says that we can pass a string.</li>
+  <li>“The argument may be a sequence (such as a <strong>string</strong>, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).” – this says what we can pass in to this function. <strong>For us right now</strong>, we just care that it says that we can pass in a string as a parameter.</li>
 </ol>
 
 <p>Next, we’ll provide some pared-down definitions of built-in functions for you that should be a little clearer, but you shouldn’t be afraid of consulting the official python documentation!</p>
@@ -1950,7 +1950,7 @@ initFunction(initQuery);
 
 <p>Note that the following definitions given are tailored specifically to where we are currently at in this course.</p>
 
-<p><a href="https://docs.python.org/3/library/functions.html#abs"><code class="highlighter-rouge">abs(value)</code></a>: ??? we’re letting you explore this in Homework 2.</p>
+<p><a href="https://docs.python.org/3/library/functions.html#abs"><code class="highlighter-rouge">abs(value)</code></a>: we’re letting you explore this one on your own!</p>
 
 <p><a href="https://docs.python.org/3/library/functions.html#int"><code class="highlighter-rouge">bool(value)</code></a>: returns the <code class="highlighter-rouge">float</code> version of the given value.</p>
 
@@ -1984,7 +1984,7 @@ initFunction(initQuery);
 </div>
 
 <h2 id="built-in-string-functions">Built-in <code class="highlighter-rouge">string</code> functions</h2>
-<p>Here is the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">python documentation for built-in string functions</a>. We’ve provided some paired down descriptions below.</p>
+<p>Here is the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">python documentation for built-in string functions</a>. We’ve provided some paired down descriptions below. Remember that the syntax for <a href="../2/using_functions.html#string-functions">using string functions</a> is slightly different than for our regular built-in functions.</p>
 
 <p><code class="highlighter-rouge">str.capitalize()</code>: return a copy of the string with its first character capitalized and the rest lowercased.</p>
 

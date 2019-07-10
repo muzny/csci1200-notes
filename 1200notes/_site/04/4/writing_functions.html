@@ -29,9 +29,9 @@
   "headline":
     "Writing Functions",
   "datePublished":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "dateModified":
-    "2019-07-05T14:59:45-05:00",
+    "2019-07-10T16:07:24-05:00",
   "description":
     "Writing Functions",
   "author": {
@@ -862,7 +862,7 @@ initFunction(initQuery);
                   
                     2.2
                   
-                  Introduction to Python
+                  Introduction to Python and the print Function
                 </a>
 
                 
@@ -1046,7 +1046,7 @@ initFunction(initQuery);
                   
                     4.1
                   
-                  Input and Using Functions
+                  The input Function
                 </a>
 
                 
@@ -1925,22 +1925,21 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="writing-functions">Writing Functions</h1>
 
-<p>Let’s write and call our own functions. We’ll start with functions that do not have parameters and do not have return values.</p>
+<p>Let’s write and call our own functions. We’ll start with functions that do not have parameters and do not have return values. See the next section of notes for information on writing functions that include parameters.</p>
 
 <p>The basic format is:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">function_name</span><span class="p">():</span>
-    <span class="c"># code here</span>
+    <span class="c"># write your code here</span>
     <span class="c"># notice that it is indented</span>
-    <span class="c"># everything indented here is inside this function</span>
+    <span class="c"># everything indented at this level</span>
+    <span class="c"># is inside this function</span>
 </code></pre></div></div>
 
 <p>Python will give us an error if we try to define a function that is only comments and no code though, so let’s define a function with a <code class="highlighter-rouge">print()</code> statement in it.</p>
 
-<p>See <a href="05_writing_functions_parameters.ipynb">section 4.5</a> for information on writing functions that include parameters.</p>
-
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me! </span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code! </span>
 <span class="k">def</span> <span class="nf">dog</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"labradoodle"</span><span class="p">)</span>
 
@@ -1951,12 +1950,12 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># After you've run the cell above, you'll have the dog() function</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># After you've run the code above, you'll have the dog() function</span>
 <span class="c"># definition loaded up, now we can call this function</span>
 <span class="c"># Calling a function that you have written is the same as calling a built</span>
 <span class="c"># in function—the difference is that you can play with the implementation</span>
 
-<span class="c"># TODO: run me!</span>
+<span class="c"># TODO: run this code!</span>
 
 <span class="n">dog</span><span class="p">()</span> <span class="c"># no return value, no parameters, so just function_name()</span>
 
@@ -1978,7 +1977,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="k">def</span> <span class="nf">analyze_name</span><span class="p">():</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
     <span class="n">name_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -1992,7 +1991,7 @@ initFunction(initQuery);
 <div class="cell code_cell">
   <div class="input_area">
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: call the analyze_name function many times in a row, </span>
-<span class="c"># then run this cell</span>
+<span class="c"># then run your code</span>
 
 </code></pre></div>    </div>
   </div>
