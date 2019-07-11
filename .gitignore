@@ -1,5 +1,6 @@
 # Template build
 1200notes/_build
+1200notes/_site
 
 # vim detritus
 *.swp
