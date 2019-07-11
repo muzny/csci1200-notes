@@ -69,9 +69,9 @@
     url: /04/4/writing_functions
   - title: Writing Functions with Parameters
     url: /04/5/writing_functions_parameters
-  - title: Main
+  - title: Writing a main Function
     url: /04/6/main
-  - title: Functions and Returns
+  - title: Writing Functions with Returns
     url: /04/7/functions_returns
 
 - title: Conditionals
@@ -131,6 +131,8 @@
       url: /09/1/using_modules
     - title: "Example: Measuring Runtime"
       url: /09/2/measuring_runtime
+    - title: Writing Modules
+      url: /09/3/writing_modules
 
 - title: File input/output
   url: /10/file-io

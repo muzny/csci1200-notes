@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Functions and Returns</title>
+  <title>Writing Functions with Returns</title>
   <meta name="description" content="Writing Functions with Returns">
 
   <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/04/7/functions_returns.html">
@@ -15,7 +15,7 @@
 
   <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/04/7/functions_returns.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Functions and Returns" />
+<meta property="og:title"       content="Writing Functions with Returns" />
 <meta property="og:description" content="Writing Functions with Returns" />
 <meta property="og:image"       content="" />
 
@@ -27,11 +27,11 @@
   "mainEntityOfPage":
     "http://0.0.0.0:4000/jupyter-book/04/7/functions_returns.html",
   "headline":
-    "Functions and Returns",
+    "Writing Functions with Returns",
   "datePublished":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "dateModified":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "description":
     "Writing Functions with Returns",
   "author": {
@@ -1141,7 +1141,7 @@ initFunction(initQuery);
                   
                     4.6
                   
-                  Main
+                  Writing a main Function
                 </a>
 
                 
@@ -1160,7 +1160,7 @@ initFunction(initQuery);
                   
                     4.7
                   
-                  Functions and Returns
+                  Writing Functions with Returns
                 </a>
 
                 
@@ -1705,6 +1705,25 @@ initFunction(initQuery);
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/09/3/writing_modules.html"
+                >
+                  
+                    9.3
+                  
+                  Writing Modules
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1935,7 +1954,7 @@ initFunction(initQuery);
     <span class="k">return</span> <span class="n">value</span>
 </code></pre></div></div>
 
-<p>Remember, in <a href="01_input.ipynb">section 4.1</a> we introduced return values and in <a href="02_using_functions.ipynb">section 4.2</a> we talked about <em>using</em> functions with return values.</p>
+<p>Remember, when we talked about <a href="../1/input.html">the input function</a>, we introduced return values. When we learned how to <a href="../2/using_functions.html#functions-with-return-values">use functions</a>, we also learned about calling functions with return values.</p>
 
 <p>Now, we’re going to write functions with return values.</p>
 
@@ -1943,13 +1962,13 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 
 <span class="k">def</span> <span class="nf">get_num</span><span class="p">():</span>
     <span class="k">return</span> <span class="mi">7</span>
 
-<span class="c"># remember, when we use return values, they must be saved in a variable</span>
-<span class="c"># if we want to use them later!</span>
+<span class="c"># remember, when we use return values, they must be saved </span>
+<span class="c"># in a variable if we want to use them later!</span>
 <span class="n">num</span> <span class="o">=</span> <span class="n">get_num</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 
@@ -1977,7 +1996,7 @@ initFunction(initQuery);
 
 </div>
 
-<h2 id="scope">Scope</h2>
+<h2 id="scope-and-return-values">Scope and return values</h2>
 
 <p>So, you might be wondering, how does scope interact with returns? That’s a great question.</p>
 
@@ -1987,7 +2006,8 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Does our return value have to be saved in a variable</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Does our return value have to be saved in a variable</span>
 <span class="c"># with the same name as it had inside the function?</span>
 <span class="c"># Answer: </span>
 <span class="k">def</span> <span class="nf">silly_fun</span><span class="p">():</span>
@@ -2004,10 +2024,16 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Can we access the variable x from outside </span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Can we access the variable x from outside </span>
 <span class="c"># the function?</span>
 <span class="c"># Answer: </span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">silly_fun</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">silly_fun2</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">silly_fun2</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -2018,15 +2044,19 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Can we see the changes from the function outside of</span>
-<span class="c"># it, even if our int variable has the same name as inside the function?</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Can we see the changes from the function outside of</span>
+<span class="c"># it, even if our int variable has the same name</span>
+<span class="c"># as inside the function?</span>
 <span class="c"># Answer: </span>
-<span class="k">def</span> <span class="nf">silly_fun2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="k">def</span> <span class="nf">silly_fun3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">x</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">silly_fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">silly_fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2038,7 +2068,7 @@ initFunction(initQuery);
   
     
     <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/04/6/main">
-      〈 <span class="u-margin-right-tiny"></span> Main
+      〈 <span class="u-margin-right-tiny"></span> Writing a main Function
     </a>
   
 

@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Adding interactivity to your book pages</title>
-  <meta name="description" content="Interactive code in your book">
+  <title>Writing Modules</title>
+  <meta name="description" content="main and if __name__ == "__main__":">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html">
+  <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/09/3/writing_modules.html">
   <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://0.0.0.0:4000/jupyter-book/feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/09/3/writing_modules.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Adding interactivity to your book pages" />
-<meta property="og:description" content="Interactive code in your book" />
+<meta property="og:title"       content="Writing Modules" />
+<meta property="og:description" content="main and if __name__ == "__main__":" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html",
+    "http://0.0.0.0:4000/jupyter-book/09/3/writing_modules.html",
   "headline":
-    "Adding interactivity to your book pages",
+    "Writing Modules",
   "datePublished":
     "2019-07-11T11:41:48-05:00",
   "dateModified":
     "2019-07-11T11:41:48-05:00",
   "description":
-    "Interactive code in your book",
+    "main and if __name__ == "__main__":",
   "author": {
     "@type": "Person",
     "name": "The Jupyter Book Community"
@@ -140,38 +140,6 @@ initFunction(function () {
 
   <!-- Load nbinteract for widgets -->
   
-<!-- Include nbinteract for interactive widgets -->
-<script src="https://unpkg.com/nbinteract-core" async></script>
-
-<script>
-let interact
-
-const initializeNbinteract = () => {
-  // If NbInteract hasn't loaded, wait one second and try again
-  if (window.NbInteract === undefined) {
-    setTimeout(initializeNbinteract, 1000)
-    return
-  }
-
-  if (interact === undefined) {
-    console.log('Initializing nbinteract...')
-    interact = new window.NbInteract({
-      baseUrl: 'https://mybinder.org',
-      spec: 'jupyter/jupyter-book/gh-pages',
-      provider: 'gh',
-    })
-    window.interact = interact
-  } else {
-    console.log("nbinteract already initialized...")
-  }
-
-  interact.prepare()
-}
-
-// Initialize nbinteract
-initFunction(initializeNbinteract);
-</script>
-
 
   <!-- Load Thebelab for interactive widgets -->
   <!-- Include Thebelab for interactive code if it's enabled -->
@@ -1697,7 +1665,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1741,7 +1709,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/jupyter-book/09/3/writing_modules.html"
                 >
                   
@@ -1953,13 +1921,12 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/jupyter-book/content/features/interactive_cells.ipynb" download>
+<a href="/jupyter-book/content/09/3/writing_modules.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
 <button id="interact-button-thebelab" class="interact-button">Thebelab</button>
 
-<button id="interact-button-show-widgets" class="interact-button js-nbinteract-widget">Show Widgets</button>
 
 
 
@@ -1968,151 +1935,41 @@ initFunction(initQuery);
 
 
 
-<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2Ffeatures%2Finteractive_cells.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/jupyter-book/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2F09%2F3%2Fwriting_modules.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/jupyter-book/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
 
 
 </div>
 
 
             <div class="c-textbook__content">
-              <h1 id="interactive-code-in-your-book">Interactive code in your book</h1>
+              <h2 id="main-and-if-__name__--__main__"><code class="highlighter-rouge">main</code> and <code class="highlighter-rouge">if __name__ == "__main__"</code>:</h2>
 
-<p>Sometimes you’d rather let people interact with code <em>directly on the page</em>
-instead of sending them off to a Binder or a JupyterHub. There are currently
-a few ways to make this happen in Jupyter Book (both of which are experimental).</p>
+<p>Another common programming pattern that you will likely encounter in python is when we hide the call to <code class="highlighter-rouge">main</code> in a guard that prevents the  main function from running if this code was imported as a module.</p>
 
-<p>This page describes how to bring interactivity to your book. Both of these
-tools use <a href="https://mybinder.org"><strong>MyBinder</strong></a> to provide a remote kernel.</p>
-
-<h2 id="making-your-page-inputs-interactive">Making your page inputs interactive</h2>
-
-<p>✨<strong>experimental</strong>✨</p>
-
-<p>If you’d like to provide interactivity for your content without making your readers
-leave the Jupyter Book site, you can use a project called <a href="https://github.com/minrk/thebelab">Thebelab</a>.</p>
-
-<p>This provides you a button that, when clicked, will convert each code cell into
-an <strong>interactive</strong> cell that can be edited. It also adds a “run” button to each cell,
-and connects to a Binder kernel running in the cloud.
-As an alternative to pressing the Thebelab button at the top of the page, you 
-can press the <img src="../images/logo/edit-button.svg" alt="" style="width: 20px; display: inline;" /> symbol in the top right corner of each code cell to start the 
-interactive mode.</p>
-
-<p>To add a Thebelab button to your Jupyter Book pages, use the following configuration:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">use_thebelab_button              </span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># If 'true', display a button to allow in-page running code cells with Thebelab</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c"># code to run our program goes here</span>
+    
+<span class="c"># two underscores precede and succeed "name" and "main" this is</span>
+<span class="c"># important that you type exactly like this</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>In addition, you can configure the Binder settings that are used to provide a kernel for
-Thebelab to run the code. These use the same configuration fields as the BinderHub interact
-buttons described above.</p>
-
-<p>For an example, click the <strong>Thebelab</strong> button above on this page, and run the code below.</p>
-
-<div class="cell code_cell">
-  <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
-
-</code></pre></div>    </div>
-  </div>
-
-  <div class="output_wrapper">
-    <div class="output_subarea">
-
-      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.collections.PathCollection at 0x7ff693dfc128&gt;
-</code></pre></div>      </div>
-
-    </div>
-  </div>
-</div>
-
-<h2 id="using-interactive-widgets-on-your-page">Using interactive widgets on your page</h2>
-
-<p>✨<strong>experimental</strong>✨</p>
-
-<p><a href="https://www.nbinteract.com"><strong>nbinteract</strong></a> is a tool for displaying interactive widgets in your
-static HTML page. It uses a Binder kernel to power the widgets, and displays output that your
-readers can interact with. For example, below we will show a simple matplotlib plot that can be made
-interactive with <strong>ipywidgets</strong></p>
-
-<p>To add a <strong>Show Widgets</strong> button to your Jupyter Book pages, use the following configuration:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">use_show_widgets_button         </span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># If 'true', display a button to show widgets backed by a Binder kernel</span>
-</code></pre></div></div>
-
-<p>Then, tell Jupyter Book that you want a cell to display a widget by <strong>adding a tag</strong> to the cell’s
-metadata called <code class="highlighter-rouge">interactive</code>. When a reader clicks on the “show widgets” button, any cells
-with this tag will be run on Binder, and have their output widgets displayed underneath the cell.</p>
-
-<p>Here’s an example of cell metadata that would trigger this behavior:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"interactive"</span><span class="p">,</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>You can configure the Binder settings that are used to provide a kernel to run the code.
-These use the same configuration fields as the BinderHub interact buttons described above.</p>
-
-<p>Clicking on “show widgets” should display a widget below. We’ve hidden the code cell that
-generates the widget by default (though you can always show it by clicking the button to
-the right!</p>
-
-<div class="cell code_cell">
-  <div class="input_area hidecode">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">FloatSlider</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">update_plot_size</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">cmap</span> <span class="o">==</span> <span class="s">"jet"</span><span class="p">:</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s">"&lt;h2 style='color: red; margin: 0px auto;'&gt;Nope&lt;/h2&gt;"</span><span class="p">))</span>
-        <span class="k">return</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
-
-<span class="n">interact</span><span class="p">(</span><span class="n">update_plot_size</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=.</span><span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s">'viridis'</span><span class="p">,</span> <span class="s">'magma'</span><span class="p">,</span> <span class="s">'jet'</span><span class="p">]);</span>
-
-</code></pre></div>    </div>
-  </div>
-
-  <div class="output_wrapper">
-    <div class="output_subarea output_widget_view">
-      <div class="output_data_text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interactive(children=(FloatSlider(value=1.0, description='s', max=2.0, min=0.1), Dropdown(description='cmap', …
-</code></pre></div>      </div>
-
-    </div>
-  </div>
-</div>
+<p>We’ll talk more about the more techincal reasons that we do this when we talk about modules.</p>
 
 
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/features/interact">
-      〈 <span class="u-margin-right-tiny"></span> Connecting content with JupyterHub...
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/09/2/measuring_runtime">
+      〈 <span class="u-margin-right-tiny"></span> Example: Measuring Runtime
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/jupyter-book/features/citations">
-      Citations and bibliographies <span class="u-margin-right-tiny"></span> 〉
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/jupyter-book/10/file-io">
+      File input/output <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

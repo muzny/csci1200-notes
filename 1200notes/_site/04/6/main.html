@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Main</title>
+  <title>Writing a main Function</title>
   <meta name="description" content="The main function">
 
   <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/04/6/main.html">
@@ -15,7 +15,7 @@
 
   <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/04/6/main.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Main" />
+<meta property="og:title"       content="Writing a main Function" />
 <meta property="og:description" content="The main function" />
 <meta property="og:image"       content="" />
 
@@ -27,11 +27,11 @@
   "mainEntityOfPage":
     "http://0.0.0.0:4000/jupyter-book/04/6/main.html",
   "headline":
-    "Main",
+    "Writing a main Function",
   "datePublished":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "dateModified":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "description":
     "The main function",
   "author": {
@@ -1141,7 +1141,7 @@ initFunction(initQuery);
                   
                     4.6
                   
-                  Main
+                  Writing a main Function
                 </a>
 
                 
@@ -1160,7 +1160,7 @@ initFunction(initQuery);
                   
                     4.7
                   
-                  Functions and Returns
+                  Writing Functions with Returns
                 </a>
 
                 
@@ -1705,6 +1705,25 @@ initFunction(initQuery);
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/09/3/writing_modules.html"
+                >
+                  
+                    9.3
+                  
+                  Writing Modules
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -1925,30 +1944,50 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="the-main-function">The <code class="highlighter-rouge">main</code> function</h1>
 
-<p>All programs have a special function called main, which is what is run when you run your program. Most programming languages have special ways to write down your function.</p>
+<p>When any program is executed, the kernel needs to know where to start running code. Since python is a scripting language, the programs that we write are executed from top to bottom.</p>
 
-<p>What we do in python is the following:</p>
+<p>When we start writing more complex programs, it is best to keep our code well-organized by having all code inside of functions. However, if all our code is inside of functions, this begs the question of where should we put the code that actually calls our functions?</p>
+
+<p>By convention, we do this by writing a special function called <code class="highlighter-rouge">main()</code> that takes no parameters and has no return value. Once we’ve defined <code class="highlighter-rouge">main()</code>, we just need to call that function to run our program.</p>
+
+<p>Here is an example using the first program that we wrote:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c"># code to run our program goes here</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"This is a program."</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"It has three print statements."</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"They are executed from top to bottom."</span><span class="p">)</span>
     
-<span class="c"># two underscode precede and succeed "name" and "main" this is</span>
-<span class="c"># important that you type exactly like this</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">main</span><span class="p">()</span>  <span class="c"># call our main function to run the program</span>
 </code></pre></div></div>
 
-<p>We’ll talk more about the more techincal reasons that we do this when we talk about modules, but for now, here is the reason that we care most about:</p>
+<p>Here is a more complex example where we are calling functions that we have defined ourselves:</p>
 
-<ul>
-  <li>Having a <code class="highlighter-rouge">main</code> function adds nice structure to our program-it tells future programmers (and our TAs) where to look to see what’s happening when our program runs.</li>
-</ul>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># this is code from section 4.4</span>
+<span class="k">def</span> <span class="nf">analyze_name</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+    <span class="n">name_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Your name is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">name_len</span><span class="p">)</span> <span class="o">+</span> <span class="s">" characters long!"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c"># code to run our program goes here</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Welcome to our name analyzer!"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"We will analyze two names!"</span><span class="p">)</span>
+    <span class="n">analyze_name</span><span class="p">()</span>
+    <span class="n">analyze_name</span><span class="p">()</span>
+    
+<span class="n">main</span><span class="p">()</span>  <span class="c"># call our main function to run the program</span>
+</code></pre></div></div>
+
+<p>Your <code class="highlighter-rouge">main</code> function should be a concise summary of what your program does, similarly to a table of contents in a book. Having a <code class="highlighter-rouge">main</code> function also adds nice structure to our program–it tells future programmers (and our TAs) where to look to see what’s happening when our program runs.</p>
 
 <p>We care about writing well-structured code and you should too!</p>
 
 <p><em><strong>From Homework 3 onwards, you will be required to have a <code class="highlighter-rouge">main</code> function</strong></em></p>
 
-<p>Let’s look at some examples of well-structured programs that use a <code class="highlighter-rouge">main</code> function:</p>
+<p>Let’s look at some more examples of well-structured programs that use a <code class="highlighter-rouge">main</code> function:</p>
 
 <div class="cell code_cell">
   <div class="input_area">
@@ -1966,8 +2005,7 @@ initFunction(initQuery);
 
 <span class="c"># if we forget the following statement, our main function</span>
 <span class="c"># will never get called! :(</span>
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">main</span><span class="p">()</span>
 
 </code></pre></div>    </div>
   </div>
@@ -1990,8 +2028,8 @@ initFunction(initQuery);
     <span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Please type an int: "</span><span class="p">))</span>
     <span class="n">subtract</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">()</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2014,13 +2052,28 @@ initFunction(initQuery);
     <span class="n">subtract_user</span><span class="p">()</span>
     <span class="n">subtract_user</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">main</span><span class="p">()</span>
 
 </code></pre></div>    </div>
   </div>
 
 </div>
+
+<p>Notice that our calls to <code class="highlighter-rouge">main()</code> happen at the end of the program. This is because we need all of our function definitions to be read into the python kernel before we call main!</p>
+
+<h2 id="main-and-if-__name__--__main__"><code class="highlighter-rouge">main</code> and <code class="highlighter-rouge">if __name__ == "__main__"</code>:</h2>
+
+<p>You may encounter code that looks similar to the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c"># code to run our program goes here</span>
+    
+<span class="c"># two underscores precede and succeed "name" and "main"</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Read more about this topic in the <a href="../../09/modules.html">section on modules</a>.</p>
 
 
               <nav class="c-page__nav">
@@ -2034,7 +2087,7 @@ initFunction(initQuery);
   
     
     <a id="js-page__nav__next" class="c-page__nav__next" href="/jupyter-book/04/7/functions_returns">
-      Functions and Returns <span class="u-margin-right-tiny"></span> 〉
+      Writing Functions with Returns <span class="u-margin-right-tiny"></span> 〉
     </a>
   
 </nav>

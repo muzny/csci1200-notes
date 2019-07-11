@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "dateModified":
-    "2019-07-10T16:07:24-05:00",
+    "2019-07-11T11:41:48-05:00",
   "description":
     "This is an example book built with Jupyter Books.",
   "author": {
@@ -1141,7 +1141,7 @@ initFunction(initQuery);
                   
                     4.6
                   
-                  Main
+                  Writing a main Function
                 </a>
 
                 
@@ -1160,7 +1160,7 @@ initFunction(initQuery);
                   
                     4.7
                   
-                  Functions and Returns
+                  Writing Functions with Returns
                 </a>
 
                 
@@ -1705,6 +1705,25 @@ initFunction(initQuery);
               </li>
               
             
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/jupyter-book/09/3/writing_modules.html"
+                >
+                  
+                    9.3
+                  
+                  Writing Modules
+                </a>
+
+                
+                
+
+              </li>
+              
+            
           </ul>
         
       </li>
@@ -2200,18 +2219,18 @@ initFunction(initQuery);
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/5/writing_functions_parameters.html",
         "teaser":null},{
-        "title": "Main",
+        "title": "Writing a main Function",
         
         "excerpt":
-            "The main function All programs have a special function called main, which is what is run when you run your program. Most programming languages have special ways to write down your function. What we do in python is the following: def main(): # code to run our program goes here # two underscode precede and succeed \"name\" and \"main\" this is # important that you type exactly like this if __name__ == \"__main__\": main() We’ll talk more about the more techincal reasons that we do this when we talk about modules, but for now, here is the reason that we...",
+            "The main function When any program is executed, the kernel needs to know where to start running code. Since python is a scripting language, the programs that we write are executed from top to bottom. When we start writing more complex programs, it is best to keep our code well-organized by having all code inside of functions. However, if all our code is inside of functions, this begs the question of where should we put the code that actually calls our functions? By convention, we do this by writing a special function called main() that takes no parameters and has...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/6/main.html",
         "teaser":null},{
-        "title": "Functions and Returns",
+        "title": "Writing Functions with Returns",
         
         "excerpt":
-            "Writing Functions with Returns Let’s write and call our own functions now, with returns! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function return value Remember, in section 4.1 we introduced return values and in section 4.2 we talked about using functions with return values. Now, we’re going to write functions with return values. Similarly to how we can think of parameters as input to a function, we can think of a return value as output from a function. # TODO: run this cell def get_num():...",
+            "Writing Functions with Returns Let’s write and call our own functions now, with returns! The basic format is: def function_name(parameters): # code here # notice that it is indented # everything indented here is inside this function return value Remember, when we talked about the input function, we introduced return values. When we learned how to use functions, we also learned about calling functions with return values. Now, we’re going to write functions with return values. Similarly to how we can think of parameters as input to a function, we can think of a return value as output from a...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/04/7/functions_returns.html",
@@ -2415,6 +2434,14 @@ initFunction(initQuery);
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/jupyter-book/09/2/measuring_runtime.html",
+        "teaser":null},{
+        "title": "Writing Modules",
+        
+        "excerpt":
+            "main and if __name__ == \"__main__\":   Another common programming pattern that you will likely encounter in python is when we hide the call to main in a guard that prevents the  main function from running if this code was imported as a module.   def main():     # code to run our program goes here      # two underscores precede and succeed \"name\" and \"main\" this is # important that you type exactly like this if __name__ == \"__main__\":     main()   We’ll talk more about the more techincal reasons that we do this when we talk about modules.   ",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/jupyter-book/09/3/writing_modules.html",
         "teaser":null},{
         "title": "Modules",
         
