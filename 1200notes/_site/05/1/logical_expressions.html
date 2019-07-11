@@ -29,9 +29,9 @@
   "headline":
     "Logical Expressions",
   "datePublished":
-    "2019-07-11T11:41:48-05:00",
+    "2019-07-11T12:19:25-05:00",
   "dateModified":
-    "2019-07-11T11:41:48-05:00",
+    "2019-07-11T12:19:25-05:00",
   "description":
     "Logical Expressions",
   "author": {
@@ -1944,7 +1944,7 @@ initFunction(initQuery);
             <div class="c-textbook__content">
               <h1 id="logical-expressions">Logical Expressions</h1>
 
-<p><a href="../02_datatypes_variables/02_data_types_operations.ipynb">Long ago</a> we promised you that we would talk about boolean values in greater depth. The theme of this week is making good on that promise.</p>
+<p>When we learned about data types, we promised that we would talk about boolean values in greater depth in the future. That future is now.</p>
 
 <p>So far, we know that the boolean data type has two values, <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code>. We also know that underneath it all, our computers are executing machine code to manipulate binary data (“bits”) that are 1s and 0s. The boolean data type maps directly to these 1s (<code class="highlighter-rouge">True</code>/”on”) and 0s (<code class="highlighter-rouge">False</code>/”off”).</p>
 
@@ -1952,7 +1952,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me!</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="nb">int</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 
 </code></pre></div>    </div>
@@ -1962,7 +1962,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me!</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
 <span class="nb">int</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
 
 </code></pre></div>    </div>
@@ -1974,15 +1974,15 @@ initFunction(initQuery);
 
 <h2 id="comparison-operators">Comparison Operators</h2>
 
-<p>Comparison operators compare two values and give back the result of <code class="highlighter-rouge">True</code> or <code class="highlighter-rouge">False</code>. Some of these comparison operators you may have seen previously in math classes, but some you probably haven’t.</p>
+<p>Comparison operators compare two values (any type) and give back the result of <code class="highlighter-rouge">True</code> or <code class="highlighter-rouge">False</code>. Some of these comparison operators you may have seen previously in math classes, but some you probably haven’t.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">value1</span> <span class="o">&lt;</span> <span class="n">value2</span>  <span class="c"># less than</span>
 <span class="n">value1</span> <span class="o">&lt;=</span> <span class="n">value2</span>  <span class="c"># less than or equal to </span>
-<span class="c">#(NOTE! "=&lt;" does NOT work!)</span>
+<span class="c"># (NOTE! "=&lt;" does NOT work!)</span>
 
 <span class="n">value1</span> <span class="o">&gt;</span> <span class="n">value2</span>  <span class="c"># greater than</span>
 <span class="n">value1</span> <span class="o">&gt;=</span> <span class="n">value2</span>  <span class="c"># greater than or equal to </span>
-<span class="c"># (NOTE! "=&lt; does NOT work!)</span>
+<span class="c"># (NOTE! "=&lt;" does NOT work!)</span>
 
 <span class="n">value1</span> <span class="o">==</span> <span class="n">value2</span>  <span class="c"># equal</span>
 <span class="n">value1</span> <span class="o">!=</span> <span class="n">value2</span>  <span class="c"># not equal</span>
@@ -1990,16 +1990,17 @@ initFunction(initQuery);
 
 </code></pre></div></div>
 
-<p>Before you play around with these, let’s pay special attention to the fact that to <em>test equality, we <strong>must</strong> use <code class="highlighter-rouge">==</code>, NOT <code class="highlighter-rouge">=</code></em>. This is because just <code class="highlighter-rouge">=</code> is our assignment operator, that’s how we assign a value to a variable, which is very different than testing for equality!</p>
+<p>Before you play around with these, let’s pay special attention to the fact that to <em>test equality, we <strong>must</strong> use <code class="highlighter-rouge">==</code>, NOT <code class="highlighter-rouge">=</code></em>. This is because just <code class="highlighter-rouge">=</code> is what’s called the <strong>assignment operator</strong>. It is how we assign a value to a variable, which is very different than testing for equality!</p>
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me. Play around with the comparison operators</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Play around with the comparison operators</span>
 <span class="c"># Can you use &lt; between floats? strings? </span>
 <span class="c"># what does &lt; between strings test for?</span>
 <span class="c"># Answer:</span>
 
-<span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span>  <span class="c"># notice that &lt; turned purple! </span>
+<span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span> 
 
 </code></pre></div>    </div>
   </div>
@@ -2008,7 +2009,13 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"cat"</span> <span class="o">&gt;</span> <span class="s">"alpaca"</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: investigate what happens when you </span>
+<span class="c"># compare strings. What makes a string "less than"</span>
+<span class="c"># or "greater than" another string?</span>
+<span class="c"># Is capitalization important?</span>
+<span class="c"># Answer:</span>
+
+<span class="s">"cat"</span> <span class="o">&gt;</span> <span class="s">"alpaca"</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2017,7 +2024,8 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this cell. Fix the SyntaxError</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Fix the SyntaxError</span>
 <span class="mf">1.0</span> <span class="o">=</span> <span class="mi">1</span>
 
 </code></pre></div>    </div>
@@ -2027,7 +2035,10 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">0.0000000000000000000001</span> <span class="o">==</span> <span class="mi">0</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># What do you think this expression will evaluate to?</span>
+<span class="c"># Does it?</span>
+<span class="mf">0.0000000000000000000001</span> <span class="o">==</span> <span class="mi">0</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2036,7 +2047,10 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"Flamingo"</span> <span class="o">!=</span> <span class="s">"flamingo"</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># What do you think this expression will evaluate to?</span>
+<span class="c"># Does it?</span>
+<span class="s">"Flamingo"</span> <span class="o">!=</span> <span class="s">"flamingo"</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2045,7 +2059,10 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"yes"</span> <span class="o">==</span> <span class="s">"YeS"</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># What do you think this expression will evaluate to?</span>
+<span class="c"># Does it?</span>
+<span class="s">"yes"</span> <span class="o">==</span> <span class="s">"YeS"</span>
 
 </code></pre></div>    </div>
   </div>
@@ -2061,16 +2078,21 @@ initFunction(initQuery);
 
 <p>Comparison operators include <code class="highlighter-rouge">==</code>,<code class="highlighter-rouge">!=</code>,<code class="highlighter-rouge">&lt;=</code>,<code class="highlighter-rouge">&gt;=</code>,<code class="highlighter-rouge">&gt;</code>,<code class="highlighter-rouge">&lt;</code>, and <code class="highlighter-rouge">in</code>.</p>
 
-<p><code class="highlighter-rouge">in</code> can be used with strings and lists to test for membership (“is there an <code class="highlighter-rouge">"a" in "cat"</code>).</p>
+<p><code class="highlighter-rouge">in</code> can be used with strings and lists to test for membership (“is there an <code class="highlighter-rouge">"a" in "cat"</code>?”). We’ll look at <code class="highlighter-rouge">in</code> in more depth when we look at lists.</p>
 
 <h2 id="logical-operators">Logical Operators</h2>
 
-<p>The second piece of the logic puzzle is the <strong>logical operator</strong> a logical operator is similar to a comparison operator except that it <strong>only</strong> operates on boolean values.</p>
+<p>The second piece of the logic puzzle is the <strong>logical operator</strong>. A logical operator is similar to a comparison operator except that it <strong>only</strong> operates on boolean values. It’s job is to take either one or two boolean values and give you back one new boolean value.</p>
 
 <p>Our logical operators are:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">boolean_value1</span> <span class="ow">and</span> <span class="n">boolean_value2</span>  <span class="c"># and</span>
-<span class="n">boolean_value1</span> <span class="ow">or</span> <span class="n">boolean_value2</span>  <span class="c"># or</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># and (two boolean values -&gt; one boolean value)</span>
+<span class="n">boolean_value1</span> <span class="ow">and</span> <span class="n">boolean_value2</span>  
+
+<span class="c"># or (two boolean values -&gt; one boolean value)</span>
+<span class="n">boolean_value1</span> <span class="ow">or</span> <span class="n">boolean_value2</span>
+
+<span class="c"># not (one boolean value -&gt; one boolean value)</span>
 <span class="ow">not</span> <span class="n">boolean_value1</span>  <span class="c"># not</span>
 </code></pre></div></div>
 
@@ -2088,7 +2110,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: play with the and logical operator.</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: play with the "and" logical operator.</span>
 <span class="c"># What happens if one of the values is false?</span>
 <span class="c"># What happens if both of the values are false?</span>
 <span class="c"># Answer:</span>
@@ -2111,7 +2133,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me!</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code!</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">"Mohamed"</span>
 <span class="n">major</span> <span class="o">=</span> <span class="s">"INFO"</span>
 <span class="k">print</span><span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="s">"INFO"</span> <span class="ow">or</span> <span class="n">major</span> <span class="o">==</span> <span class="s">"CSCI"</span><span class="p">)</span>
@@ -2123,7 +2145,7 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me!</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code!</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">"Susan"</span>
 <span class="n">major</span> <span class="o">=</span> <span class="s">"ATOC"</span>
 <span class="k">print</span><span class="p">(</span><span class="n">major</span> <span class="o">==</span> <span class="s">"INFO"</span> <span class="ow">or</span> <span class="n">major</span> <span class="o">==</span> <span class="s">"CSCI"</span><span class="p">)</span>
@@ -2135,8 +2157,9 @@ initFunction(initQuery);
 
 <div class="cell code_cell">
   <div class="input_area">
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run me! What happens?</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code! What happens?</span>
 <span class="c"># Answer:</span>
+<span class="n">major</span> <span class="o">=</span> <span class="s">"ENGL"</span>
 <span class="n">major</span> <span class="o">==</span> <span class="s">"INFO"</span> <span class="ow">or</span> <span class="s">"CSCI"</span>
 
 </code></pre></div>    </div>
@@ -2145,6 +2168,8 @@ initFunction(initQuery);
 </div>
 
 <p>In the cell above we have code that doesn’t quite do what we wanted it to. We’ve put it here because this is a common bug when writing logical expressions. Even if you are testing the value of the same variable twice, you <strong>must</strong> write the name of the variable again (because python isn’t as smart as you or I, we have to be very very explicit about everything!).</p>
+
+<p>See <a href="../6/not.html">the section on <code class="highlighter-rouge">not</code></a> for more information on this logical expression.</p>
 
 
               <nav class="c-page__nav">
