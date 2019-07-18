@@ -1,8 +1,8 @@
 ---
 title: 'Functions'
 prev_page:
-  url: /03/3/casting
-  title: 'Casting'
+  url: /03/4/strings
+  title: 'Strings'
 next_page:
   url: /04/1/input
   title: 'The input Function'

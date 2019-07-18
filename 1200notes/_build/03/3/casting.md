@@ -7,8 +7,8 @@ prev_page:
   url: /03/2/variables
   title: 'Variables'
 next_page:
-  url: /04/functions
-  title: 'Functions'
+  url: /03/4/strings
+  title: 'Strings'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
