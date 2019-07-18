@@ -16,14 +16,14 @@
 
 #######################################################################################
 # Jekyll site settings
-title: Jupyter Book
-author: The Jupyter Book Community
-email: choldgraf@berkeley.edu
+title: Introduction to Computational Thinking in Python
+author: Felix Muzny
+email: muzny@colorado.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  This is an example book built with Jupyter Books.
+  These are course notes for CSCI 1200 at the University of Colorado, Boulder.
 
-baseurl: "/jupyter-book" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: "https://jupyter.org" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################
@@ -55,8 +55,8 @@ jupyterhub_interact_text         : "Interact"  # The text that interact buttons 
 use_binder_button                : false  # If 'true', add a binder button for interactive links
 binderhub_url                    : "https://mybinder.org"  # The URL for your BinderHub. If no URL, use ""
 binder_repo_base                 : "https://github.com/"  # The site on which the textbook repository is hosted
-binder_repo_org                  : "jupyter"  # The username or organization that owns this repository
-binder_repo_name                 : "jupyter-book"  # The name of the repository on the web
+binder_repo_org                  : "muzny"  # The username or organization that owns this repository
+binder_repo_name                 : "csci1200-notes"  # The name of the repository on the web
 binder_repo_branch               : "gh-pages"  # The branch on which your textbook is hosted.
 binderhub_interact_text          : "Interact"  # The text that interact buttons will contain.
 

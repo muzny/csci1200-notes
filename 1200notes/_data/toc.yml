@@ -19,9 +19,9 @@
 - title: Introduction
   url: intro
   not_numbered: true
-- title: Search
-  search: true
-  not_numbered: true
+#- title: Search  # search is causing errors with symlinks
+#  search: true
+#  not_numbered: true
 - divider: true
 
 - title: Using Jupyter Notebooks
