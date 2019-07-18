@@ -55,6 +55,8 @@
     url: /03/2/variables
   - title: Casting
     url: /03/3/casting
+  - title: Strings
+    url: /03/4/strings
 
 - title: Functions
   url: /04/functions
