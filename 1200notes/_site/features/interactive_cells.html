@@ -10,10 +10,10 @@
   <title>Adding interactivity to your book pages</title>
   <meta name="description" content="Interactive code in your book">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html">
-  <link rel="alternate" type="application/rss+xml" title="Jupyter Book" href="http://0.0.0.0:4000/jupyter-book/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/features/interactive_cells.html">
+  <link rel="alternate" type="application/rss+xml" title="Introduction to Computational Thinking in Python" href="http://0.0.0.0:4000/feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000/features/interactive_cells.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Adding interactivity to your book pages" />
 <meta property="og:description" content="Interactive code in your book" />
@@ -25,39 +25,39 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000/jupyter-book/features/interactive_cells.html",
+    "http://0.0.0.0:4000/features/interactive_cells.html",
   "headline":
     "Adding interactivity to your book pages",
   "datePublished":
-    "2019-07-13T14:34:57-05:00",
+    "2019-07-18T12:28:01-05:00",
   "dateModified":
-    "2019-07-13T14:34:57-05:00",
+    "2019-07-18T12:28:01-05:00",
   "description":
     "Interactive code in your book",
   "author": {
     "@type": "Person",
-    "name": "The Jupyter Book Community"
+    "name": "Felix Muzny"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Data 100 at UC Berkeley",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://0.0.0.0:4000/jupyter-book",
+      "url": "http://0.0.0.0:4000",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "http://0.0.0.0:4000/jupyter-book",
+    "url": "http://0.0.0.0:4000",
     "height": 60,
     "width": 60
   }
 }
 
   </script>
-  <link rel="stylesheet" href="/jupyter-book/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -76,7 +76,7 @@
   <meta name="theme-color" content="#233947">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/jupyter-book/images/logo/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
 
   <!-- MathJax Config -->
   <!-- Allow inline math using $ and automatically break long math lines -->
@@ -120,11 +120,11 @@ initFunction = function(myfunc) {
 
   <!-- Define some javascript variables that will be useful in other javascript -->
   <script>
-    const site_basename = '/jupyter-book';
+    const site_basename = '';
   </script>
 
   <!-- Add AnchorJS to let headers be linked -->
-  <script src="/jupyter-book/assets/js/anchor.min.js"  type="text/javascript"></script>
+  <script src="/assets/js/anchor.min.js"  type="text/javascript"></script>
   <script>
 
 initFunction(function () {
@@ -135,7 +135,7 @@ initFunction(function () {
 
   <!-- Include Turbolinks to make page loads fast -->
   <!-- https://github.com/turbolinks/turbolinks -->
-  <script src="/jupyter-book/assets/js/turbolinks.js" async></script>
+  <script src="/assets/js/turbolinks.js" async></script>
   <meta name="turbolinks-cache-control" content="no-cache">
 
   <!-- Load nbinteract for widgets -->
@@ -157,7 +157,7 @@ const initializeNbinteract = () => {
     console.log('Initializing nbinteract...')
     interact = new window.NbInteract({
       baseUrl: 'https://mybinder.org',
-      spec: 'jupyter/jupyter-book/gh-pages',
+      spec: 'muzny/csci1200-notes/gh-pages',
       provider: 'gh',
     })
     window.interact = interact
@@ -179,7 +179,7 @@ initFunction(initializeNbinteract);
 
 
   <!-- Load the auto-generating TOC -->
-  <script src="/jupyter-book/assets/js/tocbot.min.js"  type="text/javascript"></script>
+  <script src="/assets/js/tocbot.min.js"  type="text/javascript"></script>
   <script>
 var initToc = function () {
   tocbot.init({
@@ -198,7 +198,7 @@ initFunction(initToc);
 </script>
 
   <!-- Google analytics -->
-  <script src="/jupyter-book/assets/js/ga.js" async></script>
+  <script src="/assets/js/ga.js" async></script>
 
   <!-- Clipboard copy button -->
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" async></script>
@@ -212,7 +212,7 @@ const codeCellId = index => `codecell${index}`
 
 const clipboardButton = id =>
   `<a id="copy-button-${id}" class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
-    <img src="/jupyter-book/assets/images/copy-button.svg" alt="Copy to clipboard">
+    <img src="/assets/images/copy-button.svg" alt="Copy to clipboard">
   </a>`
 
 // Clears selected text since ClipboardJS will select the text when copying
@@ -351,11 +351,11 @@ initFunction(addCopyButtonToCodeCells);
 </script>
 
   <!-- Load custom website scripts -->
-  <script src="/jupyter-book/assets/js/scripts.js" async></script>
+  <script src="/assets/js/scripts.js" async></script>
 
   <!-- Load custom user CSS and JS  -->
-  <script src="/jupyter-book/assets/custom/custom.js" async></script>
-  <link rel="stylesheet" href="/jupyter-book/assets/custom/custom.css">
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
 
   <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
   
@@ -502,7 +502,7 @@ document.addEventListener('turbolinks:load', updateInteractLink)
 
 
   <!-- Lunr search code - will only be executed on the /search page -->
-  <script src="/jupyter-book/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
+  <script src="/assets/js/lunr/lunr.min.js" type="text/javascript"></script>
   <script>var initQuery = function() {
   // See if we have a search box
   var searchInput = document.querySelector('input#lunr_search');
@@ -598,8 +598,8 @@ initFunction(initQuery);
 
 
 <nav id="js-sidebar" class="c-textbook__sidebar">
-  <a href="https://jupyter.org/jupyter-book/intro.html"><img src="/jupyter-book/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
-  <h2 class="c-sidebar__title">Jupyter Book</h2>
+  <a href="https://jupyter.org/jupyter-book/intro.html"><img src="/images/logo/logo.png" class="textbook_logo" id="sidebar-logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">Introduction to Computational Thinking in Python</h2>
   <ul class="c-sidebar__chapters">
     
       
@@ -612,7 +612,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/intro.html"
+          href="/intro.html"
         >
           
           Introduction
@@ -623,10 +623,6 @@ initFunction(initQuery);
 
       
     
-      
-      
-        <li class="c-sidebar__chapter"><a class="c-sidebar__entry" href="/jupyter-book/search.html">Search</a></li>
-        
       
       
         <li class="c-sidebar__divider"></li>
@@ -641,7 +637,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/01/using-jupyter-notebooks.html"
+          href="/01/using-jupyter-notebooks.html"
         >
           
             1.
@@ -665,7 +661,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/01/1/intro_jupyter_notebooks.html"
+                  href="/01/1/intro_jupyter_notebooks.html"
                 >
                   
                     1.1
@@ -684,7 +680,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/01/2/debugging_jupyter_notebooks.html"
+                  href="/01/2/debugging_jupyter_notebooks.html"
                 >
                   
                     1.2
@@ -718,7 +714,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/02/computers-and-python.html"
+          href="/02/computers-and-python.html"
         >
           
             2.
@@ -742,7 +738,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/02/1/intro_computers.html"
+                  href="/02/1/intro_computers.html"
                 >
                   
                     2.1
@@ -761,7 +757,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/02/2/intro_python.html"
+                  href="/02/2/intro_python.html"
                 >
                   
                     2.2
@@ -780,7 +776,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/02/3/first_program.html"
+                  href="/02/3/first_program.html"
                 >
                   
                     2.3
@@ -799,7 +795,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/02/4/debugging_python_code.html"
+                  href="/02/4/debugging_python_code.html"
                 >
                   
                     2.4
@@ -829,7 +825,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/03/datatypes-and-variables.html"
+          href="/03/datatypes-and-variables.html"
         >
           
             3.
@@ -853,7 +849,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/03/1/data_types_operations.html"
+                  href="/03/1/data_types_operations.html"
                 >
                   
                     3.1
@@ -872,7 +868,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/03/2/variables.html"
+                  href="/03/2/variables.html"
                 >
                   
                     3.2
@@ -891,7 +887,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/03/3/casting.html"
+                  href="/03/3/casting.html"
                 >
                   
                     3.3
@@ -910,7 +906,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/03/4/strings.html"
+                  href="/03/4/strings.html"
                 >
                   
                     3.4
@@ -940,7 +936,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/04/functions.html"
+          href="/04/functions.html"
         >
           
             4.
@@ -964,7 +960,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/1/input.html"
+                  href="/04/1/input.html"
                 >
                   
                     4.1
@@ -983,7 +979,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/2/using_functions.html"
+                  href="/04/2/using_functions.html"
                 >
                   
                     4.2
@@ -1002,7 +998,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/3/builtin_functions.html"
+                  href="/04/3/builtin_functions.html"
                 >
                   
                     4.3
@@ -1021,7 +1017,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/4/writing_functions.html"
+                  href="/04/4/writing_functions.html"
                 >
                   
                     4.4
@@ -1040,7 +1036,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/5/writing_functions_parameters.html"
+                  href="/04/5/writing_functions_parameters.html"
                 >
                   
                     4.5
@@ -1059,7 +1055,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/6/main.html"
+                  href="/04/6/main.html"
                 >
                   
                     4.6
@@ -1078,7 +1074,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/04/7/functions_returns.html"
+                  href="/04/7/functions_returns.html"
                 >
                   
                     4.7
@@ -1108,7 +1104,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/05/conditionals.html"
+          href="/05/conditionals.html"
         >
           
             5.
@@ -1132,7 +1128,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/1/logical_expressions.html"
+                  href="/05/1/logical_expressions.html"
                 >
                   
                     5.1
@@ -1151,7 +1147,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/2/if_statements.html"
+                  href="/05/2/if_statements.html"
                 >
                   
                     5.2
@@ -1170,7 +1166,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/3/if_else.html"
+                  href="/05/3/if_else.html"
                 >
                   
                     5.3
@@ -1189,7 +1185,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/4/if_elif.html"
+                  href="/05/4/if_elif.html"
                 >
                   
                     5.4
@@ -1208,7 +1204,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/5/ifif_vs_ifelif.html"
+                  href="/05/5/ifif_vs_ifelif.html"
                 >
                   
                     5.5
@@ -1227,7 +1223,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/05/6/not.html"
+                  href="/05/6/not.html"
                 >
                   
                     5.6
@@ -1257,7 +1253,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/06/iteration-and-loops.html"
+          href="/06/iteration-and-loops.html"
         >
           
             6.
@@ -1281,7 +1277,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/06/1/while_loops_basics.html"
+                  href="/06/1/while_loops_basics.html"
                 >
                   
                     6.1
@@ -1300,7 +1296,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/06/2/common_while_uses.html"
+                  href="/06/2/common_while_uses.html"
                 >
                   
                     6.2
@@ -1319,7 +1315,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/06/3/debugging_while_loops.html"
+                  href="/06/3/debugging_while_loops.html"
                 >
                   
                     6.3
@@ -1349,7 +1345,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/07/lists.html"
+          href="/07/lists.html"
         >
           
             7.
@@ -1373,7 +1369,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/1/lists_basics.html"
+                  href="/07/1/lists_basics.html"
                 >
                   
                     7.1
@@ -1392,7 +1388,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/2/strings_as_lists.html"
+                  href="/07/2/strings_as_lists.html"
                 >
                   
                     7.2
@@ -1411,7 +1407,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/3/strings_lists_mutating.html"
+                  href="/07/3/strings_lists_mutating.html"
                 >
                   
                     7.3
@@ -1430,7 +1426,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/4/slicing.html"
+                  href="/07/4/slicing.html"
                 >
                   
                     7.4
@@ -1449,7 +1445,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/5/lists_scope.html"
+                  href="/07/5/lists_scope.html"
                 >
                   
                     7.5
@@ -1468,7 +1464,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/07/6/lists_builtin_functions.html"
+                  href="/07/6/lists_builtin_functions.html"
                 >
                   
                     7.6
@@ -1498,7 +1494,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/08/for-loops.html"
+          href="/08/for-loops.html"
         >
           
             8.
@@ -1522,7 +1518,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/08/1/for_loops_basics.html"
+                  href="/08/1/for_loops_basics.html"
                 >
                   
                     8.1
@@ -1541,7 +1537,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/08/2/accumulator.html"
+                  href="/08/2/accumulator.html"
                 >
                   
                     8.2
@@ -1560,7 +1556,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/08/3/nested_forloops.html"
+                  href="/08/3/nested_forloops.html"
                 >
                   
                     8.3
@@ -1590,7 +1586,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/09/modules.html"
+          href="/09/modules.html"
         >
           
             9.
@@ -1614,7 +1610,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/09/1/using_modules.html"
+                  href="/09/1/using_modules.html"
                 >
                   
                     9.1
@@ -1633,7 +1629,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/09/2/measuring_runtime.html"
+                  href="/09/2/measuring_runtime.html"
                 >
                   
                     9.2
@@ -1652,7 +1648,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/09/3/writing_modules.html"
+                  href="/09/3/writing_modules.html"
                 >
                   
                     9.3
@@ -1682,7 +1678,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/10/file-io.html"
+          href="/10/file-io.html"
         >
           
             10.
@@ -1706,7 +1702,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/10/1/fileio.html"
+                  href="/10/1/fileio.html"
                 >
                   
                     10.1
@@ -1736,7 +1732,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/11/matplotlib.html"
+          href="/11/matplotlib.html"
         >
           
             11.
@@ -1760,7 +1756,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/11/1/matplotlib.html"
+                  href="/11/1/matplotlib.html"
                 >
                   
                     11.1
@@ -1790,7 +1786,7 @@ initFunction(initQuery);
       
       <li class="c-sidebar__chapter">
         <a class="c-sidebar__entry "
-          href="/jupyter-book/12/objects.html"
+          href="/12/objects.html"
         >
           
             12.
@@ -1814,7 +1810,7 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/jupyter-book/12/1/using_objects_part1.html"
+                  href="/12/1/using_objects_part1.html"
                 >
                   
                     12.1
@@ -1863,7 +1859,7 @@ initFunction(initQuery);
 
             
 <div class="buttons">
-<a href="/jupyter-book/content/features/interactive_cells.ipynb" download>
+<a href="/content/features/interactive_cells.ipynb" download>
 <button id="interact-button-download" class="interact-button">Download</button>
 </a>
 
@@ -1877,7 +1873,7 @@ initFunction(initQuery);
 
 
 
-<a href="https://coding.csel.io/hub/user-redirect/git-pull?repo=https://github.com//jupyter/jupyter-book&amp;branch=gh-pages&amp;subPath=content%2Ffeatures%2Finteractive_cells.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/jupyter-book/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
+<a href="https://coding.csel.io/hub/user-redirect/git-pull?repo=https://github.com//muzny/csci1200-notes&amp;branch=gh-pages&amp;subPath=content%2Ffeatures%2Finteractive_cells.ipynb&amp;app=notebook"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
 
 
 
@@ -2014,14 +2010,14 @@ the right!</p>
               <nav class="c-page__nav">
   
     
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/jupyter-book/features/interact">
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/features/interact">
       〈 <span class="u-margin-right-tiny"></span> Connecting content with JupyterHub...
     </a>
   
 
   
     
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/jupyter-book/features/citations">
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/features/citations">
       Citations and bibliographies <span class="u-margin-right-tiny"></span> 〉
     </a>
   
