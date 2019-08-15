@@ -19,9 +19,9 @@
 - title: Introduction
   url: intro
   not_numbered: true
-#- title: Search  # search is causing errors with symlinks
-#  search: true
-#  not_numbered: true
+- title: Search  # search is causing errors with symlinks
+  search: true
+  not_numbered: true
 - divider: true
 
 - title: Using Jupyter Notebooks
@@ -45,6 +45,8 @@
     url: /02/3/first_program
   - title: Debugging Python Code
     url: /02/4/debugging_python_code
+  - title: File Types and Python
+    url: /02/5/file_types
 
 - title: Datatypes and Variables
   url: /03/datatypes-and-variables
@@ -133,10 +135,12 @@
   sections:
     - title: Using Modules
       url: /09/1/using_modules
-    - title: "Example: Measuring Runtime"
-      url: /09/2/measuring_runtime
+    - title: Using Custom Modules
+      url: /09/2/using_custom_modules
     - title: Writing Modules
       url: /09/3/writing_modules
+    - title: "Example: Measuring Runtime"
+      url: /09/4/measuring_runtime
 
 - title: File input/output
   url: /10/file-io
