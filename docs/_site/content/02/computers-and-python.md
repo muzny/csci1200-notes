@@ -1,0 +1,1 @@
+In this chapter, we'll get started with programming. We'll take a (short) look at computers and how they work and we'll write our first python programs.
