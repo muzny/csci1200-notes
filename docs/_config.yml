@@ -52,7 +52,7 @@ jupyterhub_url                   : "https://coding.csel.io"  # The URL for your 
 jupyterhub_interact_text         : "Interact"  # The text that interact buttons will contain.
 
 # Binder link settings
-use_binder_button                : true  # If 'true', add a binder button for interactive links
+use_binder_button                : false  # If 'true', add a binder button for interactive links
 binderhub_url                    : "https://mybinder.org"  # The URL for your BinderHub. If no URL, use ""
 binder_repo_base                 : "https://github.com"  # The site on which the textbook repository is hosted
 binder_repo_org                  : "muzny"  # The username or organization that owns this repository

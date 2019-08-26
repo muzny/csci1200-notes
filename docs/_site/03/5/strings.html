@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Introduction to Computational Thinking in Python</title>
-  <meta name="description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder.">
+  <title>Strings</title>
+  <meta name="description" content="Strings">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//content/05/conditionals.html">
+  <link rel="canonical" href="http://0.0.0.0:4000//03/5/strings.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Computational Thinking in Python" href="http://0.0.0.0:4000//feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000//content/05/conditionals.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000//03/5/strings.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Introduction to Computational Thinking in Python" />
-<meta property="og:description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder." />
+<meta property="og:title"       content="Strings" />
+<meta property="og:description" content="Strings" />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000//content/05/conditionals.html",
+    "http://0.0.0.0:4000//03/5/strings.html",
   "headline":
-    "Introduction to Computational Thinking in Python",
+    "Strings",
   "datePublished":
     "2019-08-23T15:12:06-05:00",
   "dateModified":
     "2019-08-23T15:12:06-05:00",
   "description":
-    "These are course notes for CSCI 1200 at the University of Colorado, Boulder.",
+    "Strings",
   "author": {
     "@type": "Person",
     "name": "Felix Muzny"
@@ -961,7 +961,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1043,7 +1043,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/5/strings.html"
                 >
                   
@@ -1241,7 +1241,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/05/conditionals.html"
         >
           
@@ -1259,7 +1259,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections ">
+          <ul class="c-sidebar__sections u-hidden-visually">
             
               
               
@@ -2015,15 +2015,219 @@ initFunction(initQuery);
 </div>
 
             
+<div class="buttons">
+<a href="/content/03/5/strings.ipynb" download>
+<button id="interact-button-download" class="interact-button">Download</button>
+</a>
+
+<button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+
+
+
+
+
+
+
+
+<a href="https://coding.csel.io/hub/user-redirect/git-pull?repo=https://github.com/muzny/csci1200-notes&amp;branch=gh-pages&amp;subPath=content%2F03%2F5%2Fstrings.ipynb&amp;app=lab"><button class="interact-button" id="interact-button-jupyterhub"><img class="interact-button-logo" src="/assets/images/logo_jupyterhub.svg" alt="Interact" />Interact</button></a>
+
+
+
+</div>
+
 
             <div class="c-textbook__content">
-              <p>Conditional statements are the second major control structure that we will study. Like functions, they help control how our program is run when it is executed. While functions packaged groups of statements together, conditional statements allow us to execute groups of statements only under certain conditions.</p>
+              <h1 id="strings">Strings</h1>
 
-<p>Conditional statements are sometimes also called <strong>selection</strong> statements.</p>
+<p>Python strings are  what we call <strong>objects</strong>, meaning that they have both state <em>and</em> behavior. In contrast, data types like <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, and <code class="highlighter-rouge">bool</code> only have a single value.</p>
+
+<p>When we say that strings have state and behavior, we are referring to two important properties of strings:</p>
+<ol>
+  <li>state–strings are a certain sequence of characters in a certain order. We can think of this as the value of the string.</li>
+  <li>behavior–strings can do things, like tell us whether or not they are uppercase or count the number of times a certain character occurs in them.</li>
+</ol>
+
+<p>In this section, we’ll look at how to put special characters in strings and accessing specific characters in a string (for instance, the 3rd character). These are all topics associated with the state of a string.</p>
+
+<p>To learn more about string behavior, see the <a href="../../04/2/using_functions.html#string-functions">section on using string functions</a>.</p>
+
+<h2 id="escaping-characters-in-strings">Escaping Characters in Strings</h2>
+
+<p>Also known as: including special characters in strings.</p>
+
+<p>Some characters won’t work for us to just type into a string. For instance, what if our string includes quotation marks? What if our string spans multiple lines? What if our string needs to include a tab character?</p>
+
+<p>To put these characters into strings, we will need to <strong>escape</strong> them. This means that we will write them in a special format so that python knows what we want in the string while still being able to type it as a regular string. Our escape character is the backslash <code class="highlighter-rouge">\</code>. We will type the backslash before the character that we’d like to escape. For instance, to print <code class="highlighter-rouge">"</code>, we’ll type <code class="highlighter-rouge">"\""</code>.</p>
+
+<p>Say we’d like to print the string: <code class="highlighter-rouge">they said "hello"</code>.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># one strategy is to use single quotes around the string</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'they said "hello"'</span><span class="p">)</span>  
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># the other strategy is to _escape_ the quotes using a backslash</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"they said </span><span class="se">\"</span><span class="s">hello</span><span class="se">\"</span><span class="s">"</span><span class="p">)</span> 
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Our most important characters that we’ll need to escape are:</p>
+<ul>
+  <li><code class="highlighter-rouge">\"</code>: a double quote</li>
+  <li><code class="highlighter-rouge">\'</code>: a single quote</li>
+  <li><code class="highlighter-rouge">\n</code>: a newline</li>
+  <li><code class="highlighter-rouge">\t</code>: a tab</li>
+</ul>
+
+<p>Challenge: how do you think that you could print a backslash itself?</p>
+
+<p>Take a look at the following print statements and consider what you think they’ll print, then run the code.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"they didn't say </span><span class="se">\"</span><span class="s">goodbye</span><span class="se">\"</span><span class="s">"</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'they didn</span><span class="se">\'</span><span class="s">t say "goodbye"'</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"super</span><span class="se">\n</span><span class="s">cali</span><span class="se">\n</span><span class="s">fragilistic</span><span class="se">\n\n</span><span class="s">expialidocious"</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"super</span><span class="se">\t</span><span class="s">cali</span><span class="se">\t</span><span class="s">fragilistic</span><span class="se">\n\t</span><span class="s">expialidocious"</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<h2 id="string-indexing">String Indexing</h2>
+
+<p>String indexing is how we talk about accessing a specific character in a string. Since strings are made of a sequence of characters in a specific order, we’d like to be able to access the 1st, 2nd, 3rd, etc character of the string.</p>
+
+<p>Let’s take a look at the following string:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>d</td>
+      <td>i</td>
+      <td>n</td>
+      <td>o</td>
+      <td>s</td>
+      <td>a</td>
+      <td>u</td>
+      <td>r</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Strings are a good example of something that is very common in computer science, which is that they are <strong>0-indexed</strong>, meaning that each character has an index (where it occurs in the string) and that the indices start at the number zero.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>d</td>
+      <td>i</td>
+      <td>n</td>
+      <td>o</td>
+      <td>s</td>
+      <td>a</td>
+      <td>u</td>
+      <td>r</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This string has 8 characters that go from index 0 to index 7.</p>
+
+<p>To access a character at a given index, we use the syntax <code class="highlighter-rouge">string_variable[index_number]</code>.</p>
+
+<p>Take a look at the following code:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># Play around with the integer value between the square brackets</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s">"dinosaur"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code.</span>
+<span class="c"># What happens if we give an index value for an index that doesn't</span>
+<span class="c"># exist in the string?</span>
+<span class="c"># Answer:</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s">"dinosaur"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
 
               <nav class="c-page__nav">
   
+    
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/03/4/casting">
+      〈 <span class="u-margin-right-tiny"></span> Casting
+    </a>
+  
 
+  
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/04/functions">
+      Functions <span class="u-margin-right-tiny"></span> 〉
+    </a>
   
 </nav>
 

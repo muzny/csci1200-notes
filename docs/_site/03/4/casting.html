@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Introduction to Computational Thinking in Python</title>
-  <meta name="description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder.">
+  <meta name="description" content="">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//content/05/conditionals.html">
+  <link rel="canonical" href="http://0.0.0.0:4000//03/4/casting.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Computational Thinking in Python" href="http://0.0.0.0:4000//feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000//content/05/conditionals.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000//03/4/casting.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Introduction to Computational Thinking in Python" />
-<meta property="og:description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder." />
+<meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
 
@@ -25,7 +25,7 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000//content/05/conditionals.html",
+    "http://0.0.0.0:4000//03/4/casting.html",
   "headline":
     "Introduction to Computational Thinking in Python",
   "datePublished":
@@ -33,7 +33,7 @@
   "dateModified":
     "2019-08-23T15:12:06-05:00",
   "description":
-    "These are course notes for CSCI 1200 at the University of Colorado, Boulder.",
+    "",
   "author": {
     "@type": "Person",
     "name": "Felix Muzny"
@@ -961,7 +961,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1024,7 +1024,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/4/casting.html"
                 >
                   
@@ -1241,7 +1241,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/05/conditionals.html"
         >
           
@@ -1259,7 +1259,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections ">
+          <ul class="c-sidebar__sections u-hidden-visually">
             
               
               
@@ -2017,9 +2017,172 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <p>Conditional statements are the second major control structure that we will study. Like functions, they help control how our program is run when it is executed. While functions packaged groups of statements together, conditional statements allow us to execute groups of statements only under certain conditions.</p>
+              <h1 id="type-conversions-casting">Type Conversions (Casting)</h1>
 
-<p>Conditional statements are sometimes also called <strong>selection</strong> statements.</p>
+<p>Earlier in this chapter of the notes, we learned about different types and doing operations on them, such as adding <code class="highlighter-rouge">int</code>s together (<code class="highlighter-rouge">17 + 32</code>).</p>
+
+<p>Some of these operations result in a value of the same type (<code class="highlighter-rouge">17 + 32</code> is <code class="highlighter-rouge">49</code>, which is also an <code class="highlighter-rouge">int</code>), while some operations change the type. For instance, <code class="highlighter-rouge">17 + 32.0</code> changes the result into <code class="highlighter-rouge">49.0</code>, which is a <code class="highlighter-rouge">float</code>.</p>
+
+<p>There are two general ways to convert values from one type to another:</p>
+<ol>
+  <li>With math.</li>
+  <li>With <em>casting</em> functions.</li>
+</ol>
+
+<p>Before we get into the details of these, let’s take a look at the <code class="highlighter-rouge">type()</code> function. This is a function like the <code class="highlighter-rouge">print()</code> function. It takes one argument of any value and tells you what type that value is:</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c"># the output should be "int"</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: try out the type function on some different values</span>
+<span class="nb">type</span><span class="p">(</span><span class="s">"hi"</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>We can also pass a variable to the <code class="highlighter-rouge">type()</code> function. When we pass a variable to the <code class="highlighter-rouge">type()</code> function, we are asking “what is the type of the value stored in this variable?”.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code, then play around with it more.</span>
+<span class="c"># we can also pass variables to the type </span>
+<span class="c"># function as its argument</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">12.4</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Now that we know another way (with jupyter notebooks we have the <code class="highlighter-rouge">whos</code> notebook tool) to find the type of variables, let’s learn about actually changing data types.</p>
+
+<h2 id="the-math-way">The Math Way</h2>
+
+<p>When we are talking about numbers, we can convert from <code class="highlighter-rouge">int</code> to <code class="highlighter-rouge">float</code> just by doing math.</p>
+
+<p>Whenever we multiply, divide, add, or subtract a <code class="highlighter-rouge">float</code> with an <code class="highlighter-rouge">int</code>, the result will always be a <code class="highlighter-rouge">float</code>.</p>
+
+<p>For example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> 
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c"># int</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>  <span class="c"># float</span>
+</code></pre></div></div>
+
+<p>This means that if you have an <code class="highlighter-rouge">int</code> but you want the same number as a float, if you multiply it by <code class="highlighter-rouge">1.0</code>, you will have your desired result.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: convert the variable z to a float using math.</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">12</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>When we use math to convert types in python, we can change from <code class="highlighter-rouge">int</code> to <code class="highlighter-rouge">float</code> but we can’t do the reverse! Even if we use integer divide <code class="highlighter-rouge">//</code>, this won’t give us an <code class="highlighter-rouge">int</code> if <strong>any</strong> of the numbers started as <code class="highlighter-rouge">float</code>s!</p>
+
+<h1 id="the-casting-way">The Casting Way</h1>
+
+<p>The most general way to convert values to a different type is by using <em>casting functions</em>. These are functions that take one value and give you back that same value, but as a different type. There are 4 basic casting functions that match our 4 basic types: <code class="highlighter-rouge">int(), float(), str(), bool()</code>.</p>
+
+<p>The <code class="highlighter-rouge">int()</code> function takes any value and returns it as an <code class="highlighter-rouge">int</code>. For example, <code class="highlighter-rouge">int(7.0)</code> gives you the value <code class="highlighter-rouge">7</code>.</p>
+
+<p>What do you think happens if you do <code class="highlighter-rouge">int(7.2)</code>? What about <code class="highlighter-rouge">int(7.9)</code>?</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code. play with the int() function</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">7.2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">7.9</span><span class="p">))</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Notice that we put the <code class="highlighter-rouge">int(7.2)</code> function inside a <code class="highlighter-rouge">print()</code> function. This is so that we can print out the results and can see them.</p>
+
+<p>With casting functions, if you want to be able to use the results, you <em><strong>must always save them in a variable</strong></em>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mf">7.9</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c"># now I can access the results!</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>People frequently make the mistake of forgetting to save their results:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mf">7.9</span>
+<span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c"># DANGER!!!! Not saved!</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The other three casting functions work the same as the <code class="highlighter-rouge">int()</code> function.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: play with float()</span>
+<span class="n">val</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: play with str()</span>
+<span class="n">val</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: play with bool()</span>
+<span class="c"># We'll talk more about booleans later but they have behavior that you</span>
+<span class="c"># might not expect when casting, so they are fun to play with</span>
+<span class="n">val</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="n">val2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">val2</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>Lastly, it’s important to note that these casting functions <em>don’t always work</em>! Sometimes, they can cause errors.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code</span>
+<span class="nb">int</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>  <span class="c"># What does this even mean anyways?</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
 
               <nav class="c-page__nav">
   

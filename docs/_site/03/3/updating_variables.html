@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Introduction to Computational Thinking in Python</title>
-  <meta name="description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder.">
+  <meta name="description" content="">
 
-  <link rel="canonical" href="http://0.0.0.0:4000//content/05/conditionals.html">
+  <link rel="canonical" href="http://0.0.0.0:4000//03/3/updating_variables.html">
   <link rel="alternate" type="application/rss+xml" title="Introduction to Computational Thinking in Python" href="http://0.0.0.0:4000//feed.xml">
 
-  <meta property="og:url"         content="http://0.0.0.0:4000//content/05/conditionals.html" />
+  <meta property="og:url"         content="http://0.0.0.0:4000//03/3/updating_variables.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Introduction to Computational Thinking in Python" />
-<meta property="og:description" content="These are course notes for CSCI 1200 at the University of Colorado, Boulder." />
+<meta property="og:description" content="" />
 <meta property="og:image"       content="" />
 
 
@@ -25,7 +25,7 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "http://0.0.0.0:4000//content/05/conditionals.html",
+    "http://0.0.0.0:4000//03/3/updating_variables.html",
   "headline":
     "Introduction to Computational Thinking in Python",
   "datePublished":
@@ -33,7 +33,7 @@
   "dateModified":
     "2019-08-23T15:12:06-05:00",
   "description":
-    "These are course notes for CSCI 1200 at the University of Colorado, Boulder.",
+    "",
   "author": {
     "@type": "Person",
     "name": "Felix Muzny"
@@ -961,7 +961,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections u-hidden-visually">
+          <ul class="c-sidebar__sections ">
             
               
               
@@ -1005,7 +1005,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry "
+                <a class="c-sidebar__entry c-sidebar__entry--active"
                   href="/03/3/updating_variables.html"
                 >
                   
@@ -1241,7 +1241,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry c-sidebar__entry--active"
+        <a class="c-sidebar__entry "
           href="/05/conditionals.html"
         >
           
@@ -1259,7 +1259,7 @@ initFunction(initQuery);
 
           
 
-          <ul class="c-sidebar__sections ">
+          <ul class="c-sidebar__sections u-hidden-visually">
             
               
               
@@ -2017,9 +2017,157 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <p>Conditional statements are the second major control structure that we will study. Like functions, they help control how our program is run when it is executed. While functions packaged groups of statements together, conditional statements allow us to execute groups of statements only under certain conditions.</p>
+              <h1 id="updating-variables-values">Updating Variables’ Values</h1>
 
-<p>Conditional statements are sometimes also called <strong>selection</strong> statements.</p>
+<p>Since variables are how our programs remember information, it is extremely important that we are able to update their values.</p>
+
+<p>For example, we might have a variable <code class="highlighter-rouge">dogs</code> that represents how many dogs the user owns, we might set it to have an initial value of <code class="highlighter-rouge">0</code>. We then learn that the user has adopted a Great Dane, so we’ll want to update that value to <code class="highlighter-rouge">1</code>.</p>
+
+<p>We can expand the syntax that we learned in the previous section to understand that we can also use it to update the value of a variable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="n">initial</span> <span class="n">value</span> <span class="ow">or</span> <span class="n">new</span> <span class="n">value</span>
+</code></pre></div></div>
+
+<p>The code from our example above might translate to:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dogs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span>
+<span class="c"># user adopts a Great Dane</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Whenever we use the <code class="highlighter-rouge">=</code> between a variable name on the left and a value on the right, the value stored in the variable gets updated to whatever the new value is.</p>
+
+<h2 id="updating-a-variables-value-based-on-its-previous-value">Updating a variable’s value based on its previous value</h2>
+
+<p>One of the most powerful things about variables is that we can update them based on the value that they previously had.</p>
+
+<p>Taking our example with dogs from above, when the user adopts the Great Dane, we actually don’t care how many dogs they previously owned. We only care that they now have one more than they previously had.</p>
+
+<p>To write this in code, we’ll say “the new value of <code class="highlighter-rouge">dogs</code> should be equal to the old value of <code class="highlighter-rouge">dogs</code> plus 1”.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dogs</span> <span class="o">=</span> <span class="n">dogs</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>When this code is executed, the right side is interpreted first (<code class="highlighter-rouge">dogs + 1</code>). What python does is it reads the variable name <code class="highlighter-rouge">dogs</code>, looks up the current value of that variable, then adds 1 to that value. After completing that task, python then updates the value of the <code class="highlighter-rouge">dogs</code> variable to whatever the new value is.</p>
+
+<p>Let’s take a look at a complete example.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dogs</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span>  <span class="c"># prints out 3</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="n">dogs</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span>  <span class="c"># prints out 4</span>
+</code></pre></div></div>
+
+<p>We can generalize this to a formula for updating variables as:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="n">operator</span> <span class="n">value</span>
+<span class="c"># such as</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">value</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">-</span> <span class="n">value</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">*</span> <span class="n">value</span>
+<span class="c"># etc</span>
+</code></pre></div></div>
+
+<p>One more quick note: it’s standard practice to write the right side like <code class="highlighter-rouge">variable operator value</code>, but you can definitely also write <code class="highlighter-rouge">value operator variable</code>, like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">variable</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="n">variable</span>
+<span class="c"># minus in particular will give you a different calculation!</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">variable</span>  
+<span class="c"># etc</span>
+</code></pre></div></div>
+
+<p>What do you think will be printed out when you run the code snippets below?</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rabbits</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">rabbits</span> <span class="o">=</span> <span class="n">rabbits</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="k">print</span><span class="p">(</span><span class="n">rabbits</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cats</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">mice</span> <span class="o">-</span> <span class="p">(</span><span class="n">cats</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># each cat eats 2 mice!</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<h2 id="using--syntax-to-update-a-variables-value">Using += syntax to update a variable’s value</h2>
+
+<p>Updating the value of a variable is extremely common when we’re writing programs. It’s so common, in fact, that python has a shortcut for writing lines of code like <code class="highlighter-rouge">dogs = dogs + 1</code>. Instead of writing a <code class="highlighter-rouge">=</code> sign, we’ll use <code class="highlighter-rouge">+=</code>. This is shorthand for saying “add the previous value of the variable (<code class="highlighter-rouge">dogs</code>) to the given value (<code class="highlighter-rouge">1</code>), then update that variable(<code class="highlighter-rouge">dogs</code>)’s value”.</p>
+
+<p>Let’s take a look at some examples:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dogs</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="n">dogs</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span> <span class="c"># prints 6</span>
+
+<span class="c"># equivalent code using +=</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">dogs</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">)</span> <span class="c"># prints 6</span>
+</code></pre></div></div>
+
+<p><strong>Important</strong>: <code class="highlighter-rouge">+=</code> is not the same as the <code class="highlighter-rouge">=</code> sign! To use <code class="highlighter-rouge">+=</code>, your variable must already exist (what would happen if it didn’t already exist?). Take a look at some of the examples below.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code! What happens?</span>
+<span class="c"># if there is an error, figure out a way to fix that error</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># TODO: run this code! What happens?</span>
+<span class="c"># if there is an error, figure out a way to fix that error</span>
+<span class="n">y</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<p>In python, we can generalize the <code class="highlighter-rouge">+=</code> syntax to “operator equals”. This means that we can also use the following syntax:</p>
+<ul>
+  <li><code class="highlighter-rouge">-=</code>: <code class="highlighter-rouge">x -= 2</code> translates to <code class="highlighter-rouge">x = x - 2</code></li>
+  <li><code class="highlighter-rouge">*=</code>: <code class="highlighter-rouge">y *= 4</code> translates to <code class="highlighter-rouge">y = y * 4</code></li>
+  <li><code class="highlighter-rouge">/=</code>: <code class="highlighter-rouge">z /= 1.5</code> translates to <code class="highlighter-rouge">z = z / 1.5</code></li>
+</ul>
+
+<p>(You’ll see <code class="highlighter-rouge">+=</code> far, far, <em>far</em> more frequently than the other ones.)</p>
+
+<p>Remember, your goal is to write understandable code, so if using the standard <code class="highlighter-rouge">variable = variable + value</code> syntax is easier for you to read, use that syntax! There are no bonus points for typing less.</p>
+
+<div class="cell code_cell">
+  <div class="input_area">
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Which of the following is -= equivalent to?</span>
+<span class="c"># variable = variable - value</span>
+<span class="c"># variable = value - variable</span>
+
+<span class="c"># Do some of your own experiments to discover!</span>
+
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
 
               <nav class="c-page__nav">
   

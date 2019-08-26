@@ -7,8 +7,8 @@ prev_page:
   url: /03/1/data_types_operations
   title: 'Data Types and Operations'
 next_page:
-  url: /03/3/casting
-  title: 'Casting'
+  url: /03/3/updating_variables
+  title: 'Updating Variables' Values'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

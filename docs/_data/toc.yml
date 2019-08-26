@@ -55,10 +55,12 @@
     url: /03/1/data_types_operations
   - title: Variables
     url: /03/2/variables
+  - title: "Updating Variables' Values"
+    url: /03/3/updating_variables
   - title: Casting
-    url: /03/3/casting
+    url: /03/4/casting
   - title: Strings
-    url: /03/4/strings
+    url: /03/5/strings
 
 - title: Functions
   url: /04/functions
