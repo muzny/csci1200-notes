@@ -17,7 +17,7 @@ From [jupyter](https://jupyter.org/)'s own words:
 
 This is important because we'll be able to work with documents that contain regular text, pictures, code, and whatever output your code produces!
 
-For our purposes, Jupyter Notebooks are __where__ we will be writing our code. You can think of a Jupyter Notebook as the program that will run the programs that we write!
+For our purposes, Jupyter Lab is the coding environment where we'll be writing  our code. The file type that we'll be primarily working with is the Jupyter Notebook. We'll be writing our code in a Jupyter Notebook that is being run by Jupyter Lab. When we start running code, we'll talk more about how exactly python enters into this equation.
 
 We're using Jupyter Notebooks for a number of reasons:
 - they let us isolate small blocks of code easily

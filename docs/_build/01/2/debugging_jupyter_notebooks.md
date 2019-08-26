@@ -98,7 +98,6 @@ Jupyter notebooks come with a nice debugging tool that we'll explore more throug
 <div class="input_area" markdown="1">
 ```python
 whos
-#comment
 
 ```
 </div>
@@ -112,7 +111,8 @@ whos
 ```python
 # TODO: run the cell above this one.
 
-# TODO: add a comment to the cell above this one along with the whos command. What error do you get?
+# TODO: add a comment to the cell above this one along 
+# with the whos command. What error do you get?
 # Answer:
 
 ```
