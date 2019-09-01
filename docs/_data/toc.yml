@@ -37,8 +37,6 @@
 - title: Computers and Python
   url: /02/computers-and-python
   sections:
-  - title: Introduction to Computers
-    url: /02/1/intro_computers
   - title: Introduction to Python and the print Function
     url: /02/2/intro_python
   - title: Writing a Program
