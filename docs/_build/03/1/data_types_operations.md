@@ -97,8 +97,8 @@ Operations are used to combine two different values to calculate a single new va
 | + | plus |
 | - | minus |
 | * | times |
-| \ | divide |
-| \\\\ | double divide or integer divide |
+| / | divide |
+| // | double divide or integer divide |
 | ** | power |
 | % | modulus |
 
