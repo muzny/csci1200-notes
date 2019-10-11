@@ -101,8 +101,10 @@
       url: /06/1/while_loops_basics
     - title: Common While Loops Patterns
       url: /06/2/common_while_uses
+    - title: While Loops and the Accumulator Pattern
+      url: /06/3/while_accumulator
     - title: Debugging While Loops
-      url: /06/3/debugging_while_loops
+      url: /06/4/debugging_while_loops
 
 - title: Lists
   url: /07/lists
