@@ -16,6 +16,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 File input/output (i/o)
 =============
 
+__NOTE__: you need to run some of the "writing" code in this notebook in order for the "reading" code to work in this notebook in interactive mode!
+
 It is frequently the case that we want to be able to interact with files programmatically. This is where file i/o comes in.
 
 __input__: The file *being read/processed* by the program.  
