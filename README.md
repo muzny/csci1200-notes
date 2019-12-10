@@ -23,9 +23,9 @@ $ jupyter-book build docs/
 $ ./run.sh full/path/to/docs/
 ```
 
-Your book will be accessible at `http://0.0.0.0:4000/jupyter-book`.  
+Your book will be accessible at `http://0.0.0.0:4000/`.  
   
 
 Make sure that you have the [`jupyter-book`](https://github.com/jupyter/jupyter-book) package installed and that you have followed their instructions regarding [building books locally](https://jupyter.org/jupyter-book/guide/03_build.html#build-the-books-site-html-locally).
 
-If you'd like to look at the contents in their "plain" `.ipynb` format without building the entire book, you can find all notebooks in the `1200notes/content/` folder.
+If you'd like to look at the contents in their "plain" `.ipynb` format without building the entire book, you can find all notebooks in the `docs/content/` folder.
