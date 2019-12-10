@@ -9,8 +9,8 @@ prev_page:
   url: /06/3/while_accumulator
   title: 'While Loops and the Accumulator Pattern'
 next_page:
-  url: /07/lists
-  title: 'Lists'
+  url: /06/5/nested_whileloops
+  title: 'Nested While Loops'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

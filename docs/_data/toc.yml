@@ -105,6 +105,8 @@
       url: /06/3/while_accumulator
     - title: Debugging While Loops
       url: /06/4/debugging_while_loops
+    - title: Nested While Loops
+      url: /06/5/nested_whileloops
 
 - title: Lists
   url: /07/lists

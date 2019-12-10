@@ -29,9 +29,9 @@
   "headline":
     "Search the site",
   "datePublished":
-    "2019-08-31T23:04:41-05:00",
+    "2019-12-09T19:57:54-06:00",
   "dateModified":
-    "2019-08-31T23:04:41-05:00",
+    "2019-12-09T19:57:54-06:00",
   "description":
     "These are course notes for CSCI 1200 at the University of Colorado, Boulder.",
   "author": {
@@ -1434,12 +1434,50 @@ initFunction(initQuery);
 
               <li class="c-sidebar__section">
                 <a class="c-sidebar__entry "
-                  href="/06/3/debugging_while_loops.html"
+                  href="/06/3/while_accumulator.html"
                 >
                   
                     6.3
                   
+                  While Loops and the Accumulator Pattern
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/06/4/debugging_while_loops.html"
+                >
+                  
+                    6.4
+                  
                   Debugging While Loops
+                </a>
+
+                
+                
+
+              </li>
+              
+            
+              
+              
+
+              <li class="c-sidebar__section">
+                <a class="c-sidebar__entry "
+                  href="/06/5/nested_whileloops.html"
+                >
+                  
+                    6.5
+                  
+                  Nested While Loops
                 </a>
 
                 
@@ -2279,6 +2317,30 @@ initFunction(initQuery);
         "tags": [],
         "url": "http://0.0.0.0:4000/06/3/debugging_while_loops.html",
         "teaser":null},{
+        "title": "While Loops and the Accumulator Pattern",
+        
+        "excerpt":
+            "The Accumulator Pattern When writing while loops, in addition to the patterns covered in section 6.2, there will be one more pattern that we will see over and over and over again. This is the “accumulator” pattern. This is the pattern that we will use whenever we want to build up a value across iterations of a loop. This is different than the “tracker” variable because the accumulated value (typically) doesn’t control how many times the loop iterates. Rather, it gathers information as the loop iterates. Say, for example, that we want to know the sum of the numbers from...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/06/3/while_accumulator.html",
+        "teaser":null},{
+        "title": "Debugging While Loops",
+        
+        "excerpt":
+            "Debugging while Loops Loops are so important and debugging them can be so tricky that we are going to cover a few common mistakes and debugging strategies specific to loops. As always, our general strategies for debugging python code still apply here. Scenario 1: did not initialize our tracker variable # TODO: run this code! while x &lt; 5: print(x) x += 1 Running the above code will give you an error message similar to: --------------------------------------------------------------------------- NameError Traceback (most recent call last) &lt;ipython-input-1-e02499b1260a&gt; in &lt;module&gt;() 1 # TODO: run this code! 2 ----&gt; 3 while x &lt; 5: 4 print(x)...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/06/4/debugging_while_loops.html",
+        "teaser":null},{
+        "title": "Nested While Loops",
+        
+        "excerpt":
+            "Nested while loops There are many cases when you want to have iteration happen within an iteration. In this case, we will “nest” our loops–put one loop inside of another loop. outer_loop_value = 0 while outer_loop_value &lt; 10: print(\"Outer: \" + str(outer_loop_value)) outer_loop_value += 1 inner_loop_value = 0 while inner_loop_value &lt; 5: print(\"Inner: \" + str(inner_loop_value)) inner_loop_value += 1 Notice that your inner while loop is entirely indented within the outer while loop. Each time the outer loop iterates in this example (total of 10 times), the inner loop will iterate 5 times. # TODO: run me. (this example is...",
+        "categories": [],
+        "tags": [],
+        "url": "http://0.0.0.0:4000/06/5/nested_whileloops.html",
+        "teaser":null},{
         "title": "Iteration and Loops",
         
         "excerpt":
@@ -2426,7 +2488,7 @@ initFunction(initQuery);
         "title": "File input/output basics",
         
         "excerpt":
-            "File input/output (i/o) It is frequently the case that we want to be able to interact with files programmatically. This is where file i/o comes in. input: The file being read/processed by the program. output: The file that the program produces. In python, we’ll use the open() function to interact with files: file_obj = open(filename, mode) # do things with the file_obj file_obj.close() # always close any files that you've opened! The parameters and return value are as follows: filename : a string indicating the location of the file mode : a string indicating what we want to do with...",
+            "File input/output (i/o) NOTE: you need to run some of the “writing” code in this notebook in order for the “reading” code to work in this notebook in interactive mode! It is frequently the case that we want to be able to interact with files programmatically. This is where file i/o comes in. input: The file being read/processed by the program. output: The file that the program produces. In python, we’ll use the open() function to interact with files: file_obj = open(filename, mode) # do things with the file_obj file_obj.close() # always close any files that you've opened! The parameters...",
         "categories": [],
         "tags": [],
         "url": "http://0.0.0.0:4000/10/1/fileio.html",

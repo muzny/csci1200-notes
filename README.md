@@ -15,8 +15,8 @@ Building
 To build and serve these notes as a book locally:
 
 ```
-$ jupyter-book build 1200notes/
-$ ./run.sh full/path/to/1200notes/
+$ jupyter-book build docs/
+$ ./run.sh full/path/to/docs/
 ```
 
 Your book will be accessible at `http://0.0.0.0:4000/jupyter-book`.  
