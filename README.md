@@ -5,9 +5,9 @@ These course notes go alongsidde the content for CSCI 1200 at the University of 
   
 Current status:  
 buildable: ✅  
-within-book links: ❌  
+within-book links: ✅  
 pictures/media support working: unchecked  
-all sections pressent: ❌   
+all sections present: ❌ (matplotlib section missing)
 
 Building
 --------
