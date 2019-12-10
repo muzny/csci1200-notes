@@ -1,7 +1,11 @@
-CSCI 1200 Course Notes
+Introduction to Computational Thinking in Python
 ======================
 
-These course notes go alongsidde the content for CSCI 1200 at the University of Colorado, Boulder. They are written as a series of jupyter notebooks and can be made into a servable book via the [jupyter-book](https://github.com/jupyter/jupyter-book) package.  
+__By [Felix Muzny](https://nlp.stanford.edu/~muzny/)__.  
+  
+These course notes were originally designed go alongside the content for CSCI 1200 at the University of Colorado, Boulder. They are written as a series of jupyter notebooks and can be made into a servable book via the [jupyter-book](https://github.com/jupyter/jupyter-book) package.  
+  
+The contents of this book are licensed for free consumption under the following license: [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
   
 Current status:  
 buildable: ✅  

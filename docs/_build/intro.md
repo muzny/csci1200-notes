@@ -13,6 +13,13 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 
+Introduction to Computational Thinking in Python
+=====================
+
+__By [Felix Muzny](https://nlp.stanford.edu/~muzny/)__
+
+
+
 # What are these notes?
 
 This set of notes is meant to supplement lecture and lab materials. They are not intended to be sufficient standalone material to master python or the other concepts covered in class.
@@ -50,7 +57,7 @@ print("greetings")
 ## Acknowledgements
 
 
-These notes have taken much inspiration from the interactive textbook How to Think Like a Computer Scientist by Brad MIller and David Ranum.
+These notes have taken much inspiration from the interactive textbook How to Think Like a Computer Scientist by Brad Miller and David Ranum.
 
 These notes use the Jupyter Books package which was originally created by [Sam Lau][sam] and [Chris Holdgraf][chris]
 with support of the **UC Berkeley Data Science Education Program and the
@@ -59,4 +66,11 @@ with support of the **UC Berkeley Data Science Education Program and the
 [sam]: http://www.samlau.me/
 [chris]: https://predictablynoisy.com
 
+
+
+
+## Licensing
+
+These notes are licensed under
+[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
